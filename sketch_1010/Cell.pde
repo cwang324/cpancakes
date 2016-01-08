@@ -13,7 +13,6 @@ class Cell {
     h = tempH;
   } 
   
-  // Oscillation means increase angle
 
 
   void display() {
