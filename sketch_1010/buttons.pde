@@ -1,7 +1,17 @@
 class Buttons{ 
+    int x;
+    int y;
+    int w;
+    int h;
+    Buttons(int xa,int ya,int wn,int hn){
+      x=xa;
+      y=ya;
+      w=wn;
+      h=hn;
+    }
     
     boolean isover(){
-      if(mouseX>=150&&mouseX<=200&&mouseY>=250&&mouseY<=270){
+      if(mouseX>=x&&mouseX<=x+w&&mouseY>=y&&mouseY<=y+h){
         return true;
       }
       else{return false;}
@@ -10,7 +20,7 @@ class Buttons{
     void display(){
       stroke(255);
       fill(162);
-      rect(150,250,50,20);
+      rect(x,y,w,h);
     }
-       
 }
+
