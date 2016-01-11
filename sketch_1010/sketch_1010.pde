@@ -1,9 +1,10 @@
-// 2D Array of objects
 Cell[][] grid;
+Buttons b;
 
-// Number of columns and rows in the grid
+
 int cols = 10;
 int rows = 10;
+color bcolor;
 
 void setup() {
   size(350,350);
@@ -11,20 +12,23 @@ void setup() {
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
       // Initialize each object
-      grid[i][j] = new Cell(i*21+75,j*21+30,20,20);
+      grid[i][j] = new Cell(i*21+75,j*21+30,20,20,color(209));
     }
   }
+  
+  b = new Buttons();
 }
 
+
 void draw() {
-  background(255);
-  // The counter variables i and j are also the column and row numbers and 
-  // are used as arguments to the constructor for each object in the grid.  
+  background(255); 
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
       grid[i][j].display();
     }
   }
+  b.display();
+  if(b.isover()&&mousePressed){
+    grid[2][3].changecolor();
+  }
 }
-
-
