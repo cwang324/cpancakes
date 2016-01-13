@@ -8,7 +8,7 @@ class shapeA extends Shapes{
   
   void display(){
    stroke(255);
-   fill(162);
+   fill(0);
    rect(x,y,20,20); 
   }
 }

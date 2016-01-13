@@ -2,6 +2,7 @@ Cell[][] grid;
 Buttons b1;
 Buttons b2;
 Buttons b3;
+shapeA a1;
 Patterns p1;
 
 int cols = 10;
@@ -22,6 +23,9 @@ void setup() {
   b3 = new Buttons(230,250,50,20);
   p1 = new Patterns(90,270);
   p1.makePattern(1);
+  
+  a1 = new shapeA(155,275);
+
 }
 
 
@@ -40,5 +44,6 @@ void draw() {
     grid[2][3].changecolor();
   }
   p1.display();
+  a1.display();
   
 }
