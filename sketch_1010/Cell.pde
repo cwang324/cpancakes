@@ -13,6 +13,15 @@ class Cell {
     h = tempH;
     currentcolor=colorc;
   } 
+  
+  Cell(float tempX, float tempY){
+    x = tempX;
+    y = tempY;
+    w = 20;
+    h = 20;
+    currentcolor = 50;
+  }
+  
 
   void changecolor(){
     currentcolor=color(50);

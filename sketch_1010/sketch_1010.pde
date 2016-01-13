@@ -2,6 +2,8 @@ Cell[][] grid;
 Buttons b1;
 Buttons b2;
 Buttons b3;
+Patterns p1;
+
 int cols = 10;
 int rows = 10;
 
@@ -18,6 +20,8 @@ void setup() {
   b1 = new Buttons(155,250,50,20);
   b2 = new Buttons(80,250,50,20);
   b3 = new Buttons(230,250,50,20);
+  p1 = new Patterns(90,270);
+  p1.makePattern(1);
 }
 
 
@@ -35,4 +39,6 @@ void draw() {
   if(b1.isover()&&mousePressed){
     grid[2][3].changecolor();
   }
+  p1.display();
+  
 }
