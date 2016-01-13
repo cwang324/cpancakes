@@ -2,10 +2,11 @@ Grid g;
 Buttons b1;
 Buttons b2;
 Buttons b3;
-shapeA a1;
+shapeA A1;
 shapeB B1;
 shapeC C1;
 Patterns p1;
+boolean pieceInHand = false;
 
 int cols = 10;
 int rows = 10;
@@ -20,8 +21,9 @@ void setup() {
   p1 = new Patterns(90,270);
   p1.makePattern(1);
   
-  //a1 = new shapeA(155,275);
-  C1 = new shapeC(155,275);
+  A1 = new shapeA(90,275);
+  B1 = new shapeB(240,275);
+  C1 = new shapeC(160,275);
 }
 
 
@@ -36,7 +38,26 @@ void draw() {
   //  grid[2][3].changecolor();
   //}
   p1.display();
+  A1.display();
+  B1.display();
   C1.display();
-  
+  A1.dragShape();
+  B1.dragShape();
+  C1.dragShape();
+ 
 }
+
+  void mousePressed(){
+    if (!pieceInHand){
+      if (mouseX<155){
+      A1.toggleFollow();
+    }else if(mouseX<230){
+      B1.toggleFollow(); 
+    }else{
+      C1.toggleFollow();
+    }
+    pieceInHand=true;
+    }
+   //if (pieceInHand && g.validLocation() 
+  }
 

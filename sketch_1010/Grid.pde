@@ -1,6 +1,8 @@
 class Grid{
  
+  
  int row, col;
+ 
  Cell[][] grid;
 
  Grid(int row, int col){
@@ -22,5 +24,39 @@ class Grid{
       grid[i][j].display();
     }
   }
-}  
 }
+  
+  
+  int validX(int x){
+   return (x-75)/21; 
+  }
+  
+  int validY(int y){
+    return (y-30)/21;
+  }
+  
+  void dropShape(int[][] ary, int x, int y){
+    // checks if in grid
+    if ((x<10 && x>=0) && (y<10 && y>=0)){
+      
+      // checks if in empty space in grid
+      for (int row=0; row < ary.length; row++){
+        for  (int col=0; col<ary[0].length; col++){
+          if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)){
+            return;
+          }
+        }
+      }
+    }else{
+      return;
+    }
+    
+    // changing values in gAry
+    for (int row=0; row < ary.length; row++){
+      for  (int col=0; col<ary[0].length; col++){
+        gAry[row+x][col+y]+=ary[row][col];
+      }
+    }
+    }
+  }
+
