@@ -4,6 +4,7 @@ class Grid{
  int row, col;
  
  Cell[][] grid;
+ int[][] gAry;
 
  Grid(int row, int col){
    this.row = row;
@@ -15,6 +16,12 @@ class Grid{
       grid[i][j] = new Cell(i*21+75,j*21+30,20,20,color(209));
     }
   }
+   gAry = new int[10][10];
+   for(int c=0;c<10;c++){
+     for(int k=0;k<10;k++){
+       gAry[c][k] = 0;
+     }
+   }
   
  } 
   
