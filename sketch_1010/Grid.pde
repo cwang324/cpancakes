@@ -17,11 +17,6 @@ class Grid{
     }
   }
    gAry = new int[10][10];
-   for(int c=0;c<10;c++){
-     for(int k=0;k<10;k++){
-       gAry[c][k] = 0;
-     }
-   }
   
  } 
   

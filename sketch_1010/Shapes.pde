@@ -2,7 +2,7 @@ abstract class Shapes{
  
  boolean followMouse=false;
  float x,y, origX, origY;
- 
+ int[][] sAry;
 
  
  
@@ -11,6 +11,7 @@ abstract class Shapes{
   y=ycor;
   origX=xcor;
   origY=ycor;
+  sAry = new int[0][0];
  }
  
  void display(){};

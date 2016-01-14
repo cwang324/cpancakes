@@ -4,6 +4,7 @@ class shapeC extends Shapes{
   
  shapeC(float xcor, float ycor){
    super(xcor, ycor);
+   sAry = new int[2][2];
  }
   
   void display(){

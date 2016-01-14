@@ -4,6 +4,8 @@ class shapeA extends Shapes{
   
  shapeA(float xcor, float ycor){
    super(xcor, ycor);
+   
+   sAry = new int[0][0];
  }
   
   void display(){
