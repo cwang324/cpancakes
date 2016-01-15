@@ -6,6 +6,7 @@ shapeA A1;
 shapeB B1;
 shapeC C1;
 Patterns p1;
+Shapes s1;
 boolean pieceInHand = false;
 
 int cols = 10;
@@ -46,7 +47,7 @@ void draw() {
   C1.dragShape();
   g.changecellcolor();
   g.clearg();
-  mousePressed();
+  //mousePressed();
 }
    int num=0;
 
@@ -60,12 +61,22 @@ void draw() {
     if (!pieceInHand){
       if (mouseX<155){
       A1.toggleFollow();
+      s1 = A1;
     }else if(mouseX<230){
       B1.toggleFollow(); 
+      s1=B1;
     }else{
       C1.toggleFollow();
+      s1=C1;
     }
     pieceInHand=true;
+    }else{
+      s1.toggleFollow();
     }
-   //if (pieceInHand && g.validLocation() 
+   if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
+     g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY));
+   }else{
+     s1.toggleFollow();
+   }
   }
+  

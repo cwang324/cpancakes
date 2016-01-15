@@ -99,13 +99,19 @@ void clearg(){
         gAry[row+x][col+y]+=ary[row][col];
       }
     }
+    
+    
+    
     }
     
     
     boolean validLocation(int xcor, int ycor){
-      
+      if ( (xcor < 10 || xcor >=0) && (ycor<10 || ycor>=0)){
       return true;
     }
+    return false;
   }
   
+  
+}
   
