@@ -19,12 +19,12 @@ class Cell {
     y = tempY;
     w = 20;
     h = 20;
-    currentcolor = 50;
+    currentcolor = 0;
   }
   
 
-  void changecolor(){
-    currentcolor=color(50);
+  void changecolor(color colorz){
+    currentcolor=colorz;
   }
 
 

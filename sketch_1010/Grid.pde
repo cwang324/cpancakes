@@ -1,6 +1,4 @@
 class Grid{
- 
-  
  int row, col;
  
  Cell[][] grid;
@@ -19,6 +17,11 @@ class Grid{
    gAry = new int[10][10];
   
  } 
+ 
+ //void test(int row,int col){
+  //gAry[row][col]=1;
+ //}
+ //just testing if clear and changecolor work
   
   void display(){
    for (int i = 0; i < cols; i++) {
@@ -27,7 +30,44 @@ class Grid{
     }
   }
 }
+
   
+void changecellcolor(){
+  for(int i=0;i<10;i++){
+    for(int j=0;j<10;j++){
+      if(gAry[i][j]==1){
+        grid[i][j].changecolor(color(0));}
+        if(gAry[i][j]==0){
+          grid[i][j].changecolor(color(209));}
+    }
+  }
+}
+
+void clearRow(int row){
+    for(int i=0;i<10;i++){
+       gAry[row][i]=0;}
+}
+
+void clearCol(int col){
+   for(int i=0;i<10;i++){
+     gAry[i][col]=0;}
+}
+
+void clearg(){
+  int numrow=0;
+  int numcol=0;
+  for(int i=0;i<10;i++){
+    for(int j=0;j<10;j++){
+      if(gAry[i][j]==1){ numrow+=1;}
+      if(gAry[j][i]==1){ numcol+=1;}
+    }
+    if(numrow==10){clearRow(i);}
+    if(numcol==10){clearCol(i);}
+    numrow=0;
+    numcol=0;
+  }
+}
+ 
   
   int validX(int x){
    return (x-75)/21; 
@@ -61,4 +101,3 @@ class Grid{
     }
     }
   }
-

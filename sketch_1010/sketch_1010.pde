@@ -44,8 +44,17 @@ void draw() {
   A1.dragShape();
   B1.dragShape();
   C1.dragShape();
+  g.changecellcolor();
+  g.clearg();
  
 }
+   int num=0;
+
+ void mouseClicked(){
+      g.test(0,num);
+      num+=1;
+   }
+
 
   void mousePressed(){
     if (!pieceInHand){
@@ -60,4 +69,3 @@ void draw() {
     }
    //if (pieceInHand && g.validLocation() 
   }
-
