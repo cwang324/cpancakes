@@ -46,14 +46,14 @@ void draw() {
   C1.dragShape();
   g.changecellcolor();
   g.clearg();
- 
+  mousePressed();
 }
    int num=0;
 
- void mouseClicked(){
-      g.test(0,num);
-      num+=1;
-   }
+ //void mouseClicked(){
+ //     g.test(0,num);
+ //     num+=1;
+ //  }
 
 
   void mousePressed(){

@@ -100,4 +100,12 @@ void clearg(){
       }
     }
     }
+    
+    
+    boolean validLocation(int xcor, int ycor){
+      
+      return true;
+    }
   }
+  
+  
