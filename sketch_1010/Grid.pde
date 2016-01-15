@@ -31,7 +31,7 @@ class Grid{
   }
 }
 
-  
+  // changes the color of the grid if gAry value is not 0, indicating filled position
 void changecellcolor(){
   for(int i=0;i<10;i++){
     for(int j=0;j<10;j++){
@@ -43,16 +43,18 @@ void changecellcolor(){
   }
 }
 
+  // clears color of grid row if totally filled
 void clearRow(int row){
     for(int i=0;i<10;i++){
        gAry[row][i]=0;}
 }
-
+  // clears color of grid column if totally filled
 void clearCol(int col){
    for(int i=0;i<10;i++){
      gAry[i][col]=0;}
 }
 
+  // clears grid values
 void clearg(){
   int numrow=0;
   int numcol=0;
@@ -68,15 +70,17 @@ void clearg(){
   }
 }
  
-  
+  // converts Processing xcor to 10x10 grid xcor 
   int validX(int x){
    return (x-75)/21; 
   }
   
+  // converts Processing ycor to 10x10 grid ycor
   int validY(int y){
     return (y-30)/21;
   }
   
+  // changes gAry values (dropping the shape) if the shape is placed on an empty space in the grid
   void dropShape(int[][] ary, int x, int y){
     // checks if in grid
     if ((x<10 && x>=0) && (y<10 && y>=0)){
@@ -104,7 +108,7 @@ void clearg(){
     
     }
     
-    
+    // checks if the shape is being dropped inside the grid
     boolean validLocation(int xcor, int ycor){
       if ( (xcor < 10 || xcor >=0) && (ycor<10 || ycor>=0)){
       return true;

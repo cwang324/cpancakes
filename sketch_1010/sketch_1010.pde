@@ -73,10 +73,10 @@ void draw() {
     }else{
       s1.toggleFollow();
     }
-   if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
-     g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY));
-   }else{
-     s1.toggleFollow();
-   }
+   //if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
+ //    g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY));
+ //  }else{
+ //    s1.toggleFollow();
+   //}
   }
   

@@ -16,11 +16,13 @@ abstract class Shapes{
  
  void display(){};
   
+  // acts as the switch for dragShape() whether to follow the mouse or not
  void toggleFollow(){
   followMouse=!followMouse; 
  }
   
- // dragging thing
+ // changes Shape coordinates based on mouse coordinates if followMouse=true and returns Shape to original position if 
+ // Mouse=false
  void dragShape(){
   
   if (followMouse){
