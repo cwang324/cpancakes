@@ -4,7 +4,7 @@ class shapeB extends Shapes{
   
  shapeB(float xcor, float ycor){
    super(xcor, ycor);
-   sAry = new int[1][2];
+   sAry = new int[1][1];
  }
   
   void display(){

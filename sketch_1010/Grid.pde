@@ -63,8 +63,8 @@ void clearg(){
       if(gAry[i][j]==1){ numrow+=1;}
       if(gAry[j][i]==1){ numcol+=1;}
     }
-    if(numrow==10){clearRow(i);}
-    if(numcol==10){clearCol(i);}
+    if(numrow==9){clearRow(i);}
+    if(numcol==9){clearCol(i);}
     numrow=0;
     numcol=0;
   }
@@ -135,11 +135,11 @@ int convertY(int y){
     
     // checks if the shape is being dropped inside the grid
     boolean validLocation(int xcor, int ycor){
-      if ( (xcor < 10 || xcor >=0) && (ycor<10 || ycor>=0)){
+      if ( (xcor < 10 && xcor >=0) && (ycor<10 && ycor>=0)){
       return true;
     }
-    return false;
-  }
+      return false;
+    }
   
   
 }

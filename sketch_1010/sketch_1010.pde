@@ -44,6 +44,8 @@ void draw() {
   g.changecellcolor();
   g.clearg();
   //mousePressed();
+  //println(mouseX + ", " + mouseY);
+  //println(g.validX(mouseX) + ", " + g.validY(mouseY));
 }
    int num=0;
 
@@ -53,26 +55,28 @@ void draw() {
   //}
 
 
-  void mousePressed(){
-    if (!pieceInHand){
-      if (mouseX<155){
+  void mousePressed() {
+  if (!pieceInHand) {
+    if (mouseX<110) {
       A1.toggleFollow();
       s1 = A1;
-    }else if(mouseX<230){
+    } else if (mouseX<150) {
       B1.toggleFollow(); 
       s1=B1;
-    }else{
+    } else {
       C1.toggleFollow();
       s1=C1;
     }
-    pieceInHand=true;
-    }else{
-      s1.toggleFollow();
-    }
-   //if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
- //    g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY));
- //  }else{
- //    s1.toggleFollow();
-   //}
+    pieceInHand = true;
+  } else if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
+    g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY));
+    s1.toggleFollow();
+    pieceInHand = false;
+  } else if (pieceInHand){
+    s1.toggleFollow(); 
+    s1 = null;
+    pieceInHand = false;
   }
+  
+}
   

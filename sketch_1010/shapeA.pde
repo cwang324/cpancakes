@@ -1,11 +1,13 @@
 class shapeA extends Shapes{
   
+  
+  
   // the shape that consists of a single square
   
  shapeA(float xcor, float ycor){
    super(xcor, ycor);
    
-   sAry = new int[0][0];
+   sAry = new int[1][1];
  }
   
   void display(){
