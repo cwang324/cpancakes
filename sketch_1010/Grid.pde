@@ -18,7 +18,7 @@ class Grid{
   
  } 
  
- //void test(int row,int col){
+ //void test(int x,int y){
   //gAry[row][col]=1;
  //}
  //just testing if clear and changecolor work
@@ -69,6 +69,31 @@ void clearg(){
     numcol=0;
   }
 }
+
+//converts mouse x and mouse y to cell number
+int convertX(int x){
+  if(x>=75){
+    int rowNum=0;
+    for(int i=x;i>=75;i-=21){
+      rowNum+=1;
+    }
+  return rowNum;
+  }else{
+    return -1;}
+}
+
+int convertY(int y){
+   if(y>=30){
+     int colNum=0;
+     for(int i=y;i>=30;i-=21){
+       colNum+=1;
+     }
+   return colNum;
+   }else{
+     return -1;}
+}
+
+   
  
   // converts Processing xcor to 10x10 grid xcor 
   int validX(int x){

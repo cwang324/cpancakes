@@ -5,7 +5,6 @@ Buttons b3;
 shapeA A1;
 shapeB B1;
 shapeC C1;
-Patterns p1;
 Shapes s1;
 boolean pieceInHand = false;
 
@@ -19,8 +18,6 @@ void setup() {
   b1 = new Buttons(155,250,50,20);
   b2 = new Buttons(80,250,50,20);
   b3 = new Buttons(230,250,50,20);
-  p1 = new Patterns(90,270);
-  p1.makePattern(1);
   
   A1 = new shapeA(90,275);
   B1 = new shapeB(240,275);
@@ -38,7 +35,6 @@ void draw() {
   //if(b1.isover()&&mousePressed){
   //  grid[2][3].changecolor();
   //}
-  p1.display();
   A1.display();
   B1.display();
   C1.display();
@@ -51,10 +47,10 @@ void draw() {
 }
    int num=0;
 
- //void mouseClicked(){
- //     g.test(0,num);
- //     num+=1;
- //  }
+//void mouseClicked(){
+  //   println( g.convertY(mouseY));
+     
+  //}
 
 
   void mousePressed(){
