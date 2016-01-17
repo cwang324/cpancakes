@@ -1,10 +1,12 @@
 class shapeC extends Shapes{
   
+  int[][] sAry = { {1,1}, {1,1} };
+  
   // the shape that consists of a four squares arranged in a square
   
  shapeC(float xcor, float ycor){
    super(xcor, ycor);
-   sAry = new int[2][2];
+   
  }
   
   void display(){
@@ -17,4 +19,3 @@ class shapeC extends Shapes{
      
   }
 }
-

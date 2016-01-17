@@ -45,7 +45,8 @@ void draw() {
   g.clearg();
   //mousePressed();
   //println(mouseX + ", " + mouseY);
-  //println(g.validX(mouseX) + ", " + g.validY(mouseY));
+  //println(g.validX(mouseX) + ", " + g.validY(mouseY))
+  println("g.gAry (0,0) value " + g.gAry[0][0]);
 }
    int num=0;
 

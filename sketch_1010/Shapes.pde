@@ -3,6 +3,7 @@ abstract class Shapes{
  boolean followMouse=false;
  float x,y, origX, origY;
  int[][] sAry;
+ //boolean visible;
 
  
  
@@ -11,10 +12,12 @@ abstract class Shapes{
   y=ycor;
   origX=xcor;
   origY=ycor;
+ // visible=true;
   sAry = new int[0][0];
  }
  
  void display(){};
+ 
   
   // acts as the switch for dragShape() whether to follow the mouse or not
  void toggleFollow(){

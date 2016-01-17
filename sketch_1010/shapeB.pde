@@ -1,10 +1,12 @@
 class shapeB extends Shapes{
   
+  int[][] sAry = {{1},{1}};
+  
   // the shape that consists of a two squares stacked vertically
   
  shapeB(float xcor, float ycor){
    super(xcor, ycor);
-   sAry = new int[1][1];
+ 
  }
   
   void display(){
