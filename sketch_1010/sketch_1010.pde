@@ -35,9 +35,17 @@ void draw() {
   //if(b1.isover()&&mousePressed){
   //  grid[2][3].changecolor();
   //}
-  A1.display();
-  B1.display();
-  C1.display();
+  
+  if (A1.visible){
+    A1.display();
+  }
+  if (B1.visible){
+    B1.display();
+  }
+  if (C1.visible){
+    C1.display();
+  }
+  
   A1.dragShape();
   B1.dragShape();
   C1.dragShape();
@@ -46,7 +54,10 @@ void draw() {
   //mousePressed();
   //println(mouseX + ", " + mouseY);
   //println(g.validX(mouseX) + ", " + g.validY(mouseY))
-  println("g.gAry (0,0) value " + g.gAry[0][0]);
+  //println("g.gAry (0,0) value " + g.gAry[0][0]);
+  if (s1!=null){
+    println(s1.sAry.length);
+  }
 }
    int num=0;
 
@@ -70,7 +81,8 @@ void draw() {
     }
     pieceInHand = true;
   } else if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
-    g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY));
+    g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)); // want to make dropShape a boolean
+    s1.visible=false;
     s1.toggleFollow();
     pieceInHand = false;
   } else if (pieceInHand){
