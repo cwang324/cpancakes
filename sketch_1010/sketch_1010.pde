@@ -2,9 +2,9 @@ Grid g;
 Buttons b1;
 Buttons b2;
 Buttons b3;
-shapeA A1;
-shapeB B1;
-shapeC C1;
+Shapes A1;
+Shapes B1;
+Shapes C1;
 Shapes s1;
 boolean pieceInHand = false;
 
@@ -19,7 +19,18 @@ void setup() {
   b2 = new Buttons(80,250,50,20);
   b3 = new Buttons(230,250,50,20);
   
-  A1 = new shapeA(90,275);
+  // randomly generating shapes
+  
+  int n = (int) (Math.random()*3);
+  if (n==0){
+    A1 = new shapeA(90,275);
+  }else if (n==1){
+    A1 = new shapeB(90,275);
+  }else{
+    A1 = new shapeC(90,275);
+  }
+  
+  //A1 = new shapeA(90,275);
   B1 = new shapeB(240,275);
   C1 = new shapeC(160,275);
 }
@@ -55,9 +66,9 @@ void draw() {
   //println(mouseX + ", " + mouseY);
   //println(g.validX(mouseX) + ", " + g.validY(mouseY))
   //println("g.gAry (0,0) value " + g.gAry[0][0]);
-  if (s1!=null){
-    println(s1.sAry.length);
-  }
+  
+  println((int)(Math.random()*3));
+  
 }
    int num=0;
 
