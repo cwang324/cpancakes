@@ -3,9 +3,9 @@ class shapeA extends Shapes {
    // the shape that consists of a single square
   
    shapeA (float xcor, float ycor){   
-       super(xcor, ycor);
-       sAry = new int[1][1];
-       sAry[0][0] = 1;
+       super(xcor, ycor);       
+       int[][] localAry = {{1}};  
+       this.sAry = localAry;       
    }
  
   void display() {
@@ -15,7 +15,12 @@ class shapeA extends Shapes {
   }
   
   String toString() {
-        return "shapeA picked up - length = " + sAry.length;
+        return "shapeA picked up = " + Arrays.toString(sAry);
+  }  
+  
+  boolean contains(int mX, int mY){
+       return ( (mX>x && mX<(x+20)) && (mY>y && mY<(y+20)) );
   }
+  
   
 }

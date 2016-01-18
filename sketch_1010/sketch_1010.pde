@@ -1,10 +1,10 @@
 Grid g;
-Buttons b1;
-Buttons b2;
-Buttons b3;
-Shapes A1;
-Shapes B1;
-Shapes C1;
+Buttons btn1;
+Buttons btn2;
+Buttons btn3;
+Shapes  a1;
+Shapes  b1;
+Shapes  c1;
 Shapes s1 = null;
 boolean pieceInHand = false;
 
@@ -15,24 +15,24 @@ void setup() {
     size(350,350);
   
     g = new Grid(10,10);
-    b1 = new Buttons(155,250,50,20);
-    b2 = new Buttons(80,250,50,20);
-    b3 = new Buttons(230,250,50,20);
+    btn1 = new Buttons(155,250,50,20);
+    btn2 = new Buttons(80,250,50,20);
+    btn3 = new Buttons(230,250,50,20);
   
     // randomly generating shapes
   
     //int n = (int) (Math.random()*3);
     //if (n==0){
-    //  A1 = new shapeA(90,275);
+    //  a1 = new shapeA(90,275);
     //}else if (n==1){
-    //  A1 = new shapeB(90,275);
+    //  a1 = new shapeB(90,275);
     //}else{
-    //  A1 = new shapeC(90,275);
+    //  a1 = new shapeC(90,275);
     //}
   
-    A1 = new shapeA(90,275);
-    B1 = new shapeB(240,275);
-    C1 = new shapeC(160,275);
+    a1 = new shapeA(90,275);
+    b1 = new shapeB(240,275);
+    c1 = new shapeC(160,275);
 }
 
 
@@ -40,26 +40,26 @@ void setup() {
 void draw() {
     background(255); 
     g.display();
-    b1.display();
-    b2.display();
-    b3.display();
+    btn1.display();
+    btn2.display();
+    btn3.display();
   //if(b1.isover()&&mousePressed){
   //  grid[2][3].changecolor();
   //}
   
-    if (A1.visible){
-        A1.display();
+    if (a1.visible){
+        a1.display();
     }
-    if (B1.visible){
-        B1.display();
+    if (b1.visible){
+        b1.display();
     }
-    if (C1.visible){
-        C1.display();
+    if (c1.visible){
+        c1.display();
     }
   
-    A1.dragShape();
-    B1.dragShape();
-    C1.dragShape();
+    a1.dragShape();
+    b1.dragShape();
+    c1.dragShape();
     g.changecellcolor();
     g.clearg();
     //mousePressed();
@@ -70,7 +70,7 @@ void draw() {
     //println((int)(Math.random()*3));
    //if ( s1 != null) {
    //    println("s1.length= " + s1.sAry.length ); 
-   //    println("A1 =" + A1.sAry.length);  
+   //    println("a1 =" + a1.sAry.length);  
    //    println(s1);
    // }
 }
@@ -84,23 +84,53 @@ void draw() {
   //}
 
 
+  private void checkIfAShapeIsSelected () {
+      if ( a1.visible  && a1.contains(mouseX, mouseY)) {
+          a1.setFollowMouse(true);
+          s1 = a1;
+          println("\n=========================\nsetting s1 to a1\n  s1 = " + s1 + ", a1 = " + a1 +  "\n=========================\n"); 
+          pieceInHand = true;
+          println("set pieceInHand to " + pieceInHand );              
+      }
+      else if ( b1.visible && b1.contains(mouseX, mouseY) ){
+          b1.setFollowMouse(true);
+          s1=b1;
+          println("\n=========================\nsetting s1 to b1\n  s1 = " + s1 + ", b1 = " + b1 +  "\n=========================\n");
+          pieceInHand = true;
+          println("set pieceInHand to " + pieceInHand );          
+      }
+      else if ( c1.visible && c1.contains (mouseX, mouseY) )  {
+          c1.setFollowMouse(true);
+          s1=c1;
+          println("\n=========================\nsetting s1 to c1\n  s1 = " + s1 + ", c1 = " + c1 +  "\n=========================\n");
+          pieceInHand = true;
+          println("set pieceInHand to " + pieceInHand );              
+      }  
+  }  
+
+
   void mousePressed() {
       if (!pieceInHand) 
-      {
-          if (mouseX<110) { //<>//
-              A1.setFollowMouse(true);
-              s1 = A1;
-              println("\n=========================\nsetting s1 to A1\n  s1 = " + s1 + ", A1 = " + A1 +  "\n=========================\n");
+      {     
+          
+        
+          //if (mouseX<110) { //<>//
+          //    a1.setFollowMouse(true);
+          //    s1 = a1;
+          //    println("\n=========================\nsetting s1 to a1\n  s1 = " + s1 + ", a1 = " + a1 +  "\n=========================\n");
               
-          } else if (mouseX<150) {
-              B1.setFollowMouse(true);
-              s1=B1;
-          } else {
-              C1.setFollowMouse(true);
-              s1=C1;
-          }       
-          pieceInHand = true;
-          println("set pieceInHand to " + pieceInHand );
+          //} else if (mouseX<150) {
+          //    b1.setFollowMouse(true);
+          //    s1=b1;
+          //    println("\n=========================\nsetting s1 to b1\n  s1 = " + s1 + ", b1 = " + b1 +  "\n=========================\n");
+          //} else {
+          //    c1.setFollowMouse(true);
+          //    s1=c1;
+          //    println("\n=========================\nsetting s1 to c1\n  s1 = " + s1 + ", c1 = " + c1 +  "\n=========================\n");              
+          //}       
+          //pieceInHand = true;
+          //println("set pieceInHand to " + pieceInHand );
+          checkIfAShapeIsSelected();          
       } 
       //else if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
       //    println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
@@ -128,6 +158,7 @@ void draw() {
               println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
               g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)); // want to make dropShape a boolean
               s1.visible=false;
+              s1 = null;
           } else {                        
               s1.setFollowMouse(false);              
           }          

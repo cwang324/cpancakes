@@ -14,6 +14,7 @@ abstract class Shapes {
     }
  
     abstract void display();
+    abstract boolean contains(int mX, int mY);
  
   
     //// acts as the switch for dragShape() whether to follow the mouse or not
