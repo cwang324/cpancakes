@@ -7,14 +7,14 @@ class shapeC extends Shapes {
      this.sAry = localAry;   
  }
   
- void display(){
-     stroke(255);
-     fill(0);
-     rect(x,y,20,20);
-     rect(x,y+20,20,20);   
-     rect(x+20,y,20,20);
-     rect(x+20,y+20,20,20);     
-  }
+ //void display(){
+ //    stroke(255);
+ //    fill(0);
+ //    rect(x,y,20,20);
+ //    rect(x,y+20,20,20);   
+ //    rect(x+20,y,20,20);
+ //    rect(x+20,y+20,20,20);     
+ // }
   
   
   String toString() {

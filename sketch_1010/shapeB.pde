@@ -7,15 +7,19 @@ class shapeB extends Shapes {
  shapeB(float xcor, float ycor) {
      super(xcor, ycor);
      int[][] localAry = {{1}, {1}};
-     sAry = localAry; 
+     this.sAry = localAry;  
  }
   
-  void display(){
-      stroke(255);
-      fill(0);
-      rect(x,y,20,20);
-      rect(x,y+20,20,20);    
-  }
+  //void display(){
+  //    stroke(255);
+  //    fill(0);
+  //    rect(x,y,20,20);
+  //    rect(x,y+20,20,20);    
+  //}
+  
+  
+  
+  
   
   String toString() {
         return "shapeB picked up = " + Arrays.toString(sAry);

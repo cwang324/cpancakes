@@ -1,5 +1,6 @@
 abstract class Shapes {
- 
+   
+    static final int CELL_SIZE = 20;
     boolean followMouse=false;
     float x,y, origX, origY;
     protected int[][] sAry = null;
@@ -13,7 +14,7 @@ abstract class Shapes {
         visible=true;
     }
  
-    abstract void display();
+    //abstract void display();
     abstract boolean contains(int mX, int mY);
  
   
@@ -38,7 +39,37 @@ abstract class Shapes {
             x = origX;
             y = origY;
         }
-    } 
+    }
+    
+    
+    void display () {
+        stroke(255);
+        fill(0);
+        float startX = x;
+        for ( int i = 0; i < sAry.length; i++ ) {
+            for ( int j = 0; j < sAry[i].length; j++ )  {                
+                rect(x,y,CELL_SIZE,CELL_SIZE);
+                x += CELL_SIZE;
+            }
+            x = startX;
+            y += CELL_SIZE;
+            
+        }
+    }  
+    
+    
+   public void printArray(int[][] xArray)  {
+       for ( int i = 0; i < xArray.length; i++) {
+           for ( int j = 0; j < xArray[i].length; j++ ) {
+               print ( xArray[i][j] );
+               if ( j < xArray[i].length-1 ) {
+                   print(", ");
+               }                     
+           }
+           println();
+       }
+   }
+    
  }
  
  

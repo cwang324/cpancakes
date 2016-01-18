@@ -7,6 +7,7 @@ Shapes  b1;
 Shapes  c1;
 Shapes s1 = null;
 boolean pieceInHand = false;
+int regen = 2;
 
 int cols = 10;
 int rows = 10;
@@ -62,6 +63,13 @@ void draw() {
     c1.dragShape();
     g.changecellcolor();
     g.clearg();
+    
+    if (regen==0){
+        a1 = new shapeA(90,275);
+        b1 = new shapeB(240,275);
+        c1 = new shapeC(160,275);
+        regen=2;
+    }
     //mousePressed();
     //println(mouseX + ", " + mouseY);
     //println(g.validX(mouseX) + ", " + g.validY(mouseY));
@@ -159,6 +167,7 @@ void draw() {
               g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)); // want to make dropShape a boolean
               s1.visible=false;
               s1 = null;
+              regen-=1;
           } else {                        
               s1.setFollowMouse(false);              
           }          
