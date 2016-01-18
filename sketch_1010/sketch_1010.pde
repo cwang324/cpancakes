@@ -203,9 +203,9 @@ void draw() {
           println("switch off shape to follow the mouse" );
           s1.setFollowMouse(false);
           
-          if ( g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
+          if ( g.validLocation(g.validY(mouseY), g.validX(mouseX))) {
               println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
-              if ( g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)) ){ // want to make dropShape a boolean
+              if ( g.dropShape(s1.sAry, g.validY(mouseY), g.validX(mouseX)) ){ // want to make dropShape a boolean
                     s1.visible=false;
                     s1 = null;
                     regen-=1;
