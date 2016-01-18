@@ -22,18 +22,35 @@ void setup() {
   
     // randomly generating shapes
   
-    //int n = (int) (Math.random()*3);
-    //if (n==0){
-    //  a1 = new shapeA(90,275);
-    //}else if (n==1){
-    //  a1 = new shapeB(90,275);
-    //}else{
-    //  a1 = new shapeC(90,275);
-    //}
+    int n = (int) (Math.random()*3);
+    if (n==0){
+         a1 = new shapeA(90,275);
+    }else if (n==1){
+         a1 = new shapeB(90,275);
+    }else{
+         a1 = new shapeC(90,275);
+    }
   
-    a1 = new shapeA(90,275);
-    b1 = new shapeB(240,275);
-    c1 = new shapeC(160,275);
+    n = (int) (Math.random()*3);
+    if (n==0){
+         b1 = new shapeA(160,275);
+    }else if (n==1){
+         b1 = new shapeB(160,275);
+    }else{
+         b1 = new shapeC(160,275);
+    }
+    
+    n = (int) (Math.random()*3);
+    if (n==0){
+         c1 = new shapeA(240,275);
+    }else if (n==1){
+         c1 = new shapeB(240,275);
+    }else{
+         c1 = new shapeC(240,275);
+    }
+    //a1 = new shapeA(90,275);
+    //b1 = new shapeB(160,275);
+    //c1 = new shapeC(240,275);
 }
 
 
@@ -61,14 +78,37 @@ void draw() {
     a1.dragShape();
     b1.dragShape();
     c1.dragShape();
-    g.changecellcolor();
+    g.changeCellColor();
     g.clearg();
     
     if (regen==0){
-        a1 = new shapeA(90,275);
-        b1 = new shapeB(240,275);
-        c1 = new shapeC(160,275);
-        regen=2;
+            int n = (int) (Math.random()*3);
+        if (n==0){
+             a1 = new shapeA(90,275);
+        }else if (n==1){
+             a1 = new shapeB(90,275);
+        }else{
+             a1 = new shapeC(90,275);
+        }
+      
+        n = (int) (Math.random()*3);
+        if (n==0){
+             b1 = new shapeA(160,275);
+        }else if (n==1){
+             b1 = new shapeB(160,275);
+        }else{
+             b1 = new shapeC(160,275);
+        }
+        
+        n = (int) (Math.random()*3);
+        if (n==0){
+             c1 = new shapeA(240,275);
+        }else if (n==1){
+             c1 = new shapeB(240,275);
+        }else{
+             c1 = new shapeC(240,275);
+        }
+            regen=2;
     }
     //mousePressed();
     //println(mouseX + ", " + mouseY);
@@ -164,10 +204,11 @@ void draw() {
           
           if ( g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
               println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
-              g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)); // want to make dropShape a boolean
-              s1.visible=false;
-              s1 = null;
-              regen-=1;
+              if ( g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)) ){ // want to make dropShape a boolean
+                    s1.visible=false;
+                    s1 = null;
+                    regen-=1;
+              }
           } else {                        
               s1.setFollowMouse(false);              
           }          

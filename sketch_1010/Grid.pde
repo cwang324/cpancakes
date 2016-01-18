@@ -1,54 +1,64 @@
-class Grid{
- int row, col;
+class Grid {
+    int row, col;
  
- Cell[][] grid;
- int[][] gAry;
+    Cell[][] grid;
+    int[][] gAry;
 
- Grid(int row, int col){
-   this.row = row;
-   this.col = col;
-   grid = new Cell[cols][rows];
-  for (int i = 0; i < cols; i++) {
-    for (int j = 0; j < rows; j++) {
-      // Initialize each object
-      grid[i][j] = new Cell(i*21+75,j*21+30,20,20,color(209));
-    }
-  }
-   gAry = new int[10][10];
+    Grid(int row, int col) {
+        this.row = row;
+        this.col = col;
+        grid = new Cell[cols][rows];
+        
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+                // Initialize each object
+                // rwang 
+                //grid[i][j] = new Cell(i*21+75,j*21+30,20,20,color(209));
+                // pass in row and col as well
+                grid[i][j] = new Cell(i, j, i*21+75,j*21+30,20,20,color(209));
+            }
+        }
+        gAry = new int[10][10]; 
+    } 
+
   
- } 
- 
- //void test(int x,int y){
-  //gAry[row][col]=1;
- //}
- //just testing if clear and changecolor work
-  
-  void display(){
-   for (int i = 0; i < cols; i++) {
-    for (int j = 0; j < rows; j++) {
-      grid[i][j].display();
+    void display() {
+       print("\n !!!!!!!!!!!!!!!!!!!!\ndisplay the whole grid\n");
+        for (int i = 0; i < cols; i++) {
+            for (int j = 0; j < rows; j++) {
+               print("display grid[" + i + "][" + j + "]");
+               grid[i][j].display();               
+            }
+            println();
+        }
     }
-  }
-}
 
-  // changes the color of the grid if gAry value is not 0, indicating filled position
-void changecellcolor(){
-  for(int i=0;i<10;i++){
-    for(int j=0;j<10;j++){
-      if(gAry[i][j]==1){
-        grid[i][j].changecolor(color(0));}
-        if(gAry[i][j]==0){
-          grid[i][j].changecolor(color(209));}
+
+    // changes the color of the grid if gAry value is not 0, indicating filled position
+    void changeCellColor() {
+        for(int i=0;i<10;i++) {
+            for(int j=0;j<10;j++) {
+                if(gAry[i][j]==1) {
+                    grid[i][j].changeColor(color(0));
+                }
+                
+                if (gAry[i][j]==0) {
+                    grid[i][j].changeColor(color(209));
+                }
+            }
+        }
     }
-  }
-}
 
-  // clears color of grid row if totally filled
-void clearRow(int row){
-    for(int i=0;i<10;i++){
-       gAry[row][i]=0;}
-}
-  // clears color of grid column if totally filled
+
+    // clears color of grid row if totally filled
+    void clearRow(int row){
+        for(int i=0;i<10;i++){
+            gAry[row][i]=0;
+        }
+    }
+        
+        
+        // clears color of grid column if totally filled
 void clearCol(int col){
    for(int i=0;i<10;i++){
      gAry[i][col]=0;}
@@ -107,9 +117,9 @@ int convertY(int y){
   
   
   // changes gAry values (dropping the shape) if the shape is placed on an empty space in the grid
-  void dropShape(int[][] ary, int x, int y) {
+  boolean dropShape(int[][] ary, int x, int y) {
     
-      println ("\n=======================\nGrid.dropShap() method. input argument ary = " + ary  + "\n=======================\n");
+      println ("\n=======================\nGrid.dropShape() method. input argument ary = " + ary  + "\n=======================\n");
     
       // checks if in grid
       if ((x<10 && x>=0) && (y<10 && y>=0)) {
@@ -118,23 +128,46 @@ int convertY(int y){
           for (int row=0; row < ary.length; row++){
               for  (int col=0; col<ary[0].length; col++){
                   if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
-                      return;
+                      return false;
                   }
               }
           }
       } 
       
-      //else {
-      //    return;
-      //}
-    
+      println("print shape array");
+      printArray(ary);  
+      
+      
+      // before changing gAry
+      println("Before changing gAry");
+      printArray(gAry);  
+      
       // changing values in gAry
-      for (int row=0; row < ary.length; row++) {
-          for  (int col=0; col<ary[0].length; col++) {
+      for (int row=0; row < ary.length; row++) {        
+          for  (int col=0; col<ary[row].length; col++) {         
               gAry[row+x][col+y]+=ary[row][col];
           }
       }
+
+      println("After changing gAry");
+      printArray(gAry);  
+      return true;
   }
+  
+    
+   public void printArray(int[][] xArray)  {
+       for ( int i = 0; i < xArray.length; i++) {
+           for ( int j = 0; j < xArray[i].length; j++ ) {
+               print ( xArray[i][j] );
+               if ( j < xArray[i].length-1 ) {
+                   print(", ");
+               }                     
+           }
+           println();
+       }
+   }    
+    
+    
     
   // checks if the shape is being dropped inside the grid
   boolean validLocation(int xcor, int ycor) {

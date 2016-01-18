@@ -3,7 +3,9 @@ class Cell {
   // as well as its size with the variables x,y,w,h
   float x,y;   
   float w,h;   
-  color currentcolor;
+  color currentColor;
+  int row;
+  int col;
 
 
   Cell(float tempX, float tempY, float tempW, float tempH, color colorc) {
@@ -11,26 +13,37 @@ class Cell {
     y = tempY;
     w = tempW;
     h = tempH;
-    currentcolor=colorc;
+    currentColor=colorc;
   } 
+
+  Cell(int row, int col, float tempX, float tempY, float tempW, float tempH, color colorc) {
+    x = tempX;
+    y = tempY;
+    w = tempW;
+    h = tempH;
+    currentColor=colorc;
+    this.row = row;
+    this.col = col;
+  } 
+
   
   Cell(float tempX, float tempY){
     x = tempX;
     y = tempY;
     w = 20;
     h = 20;
-    currentcolor = 0;
+    currentColor = 0;
   }
   
 
-  void changecolor(color colorz){
-    currentcolor=colorz;
+  void changeColor(color colorz){
+    currentColor=colorz;
   }
 
 
   void display() {
     stroke(255);
-    fill(currentcolor);
+    fill(currentColor);
     rect(x,y,w,h); 
   }
 }
