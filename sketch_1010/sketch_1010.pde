@@ -80,7 +80,6 @@ void draw() {
     c1.dragShape();
     // no need
     //g.changeCellColor();
-    g.clearg();
     
     if (regen==0){
             int n = (int) (Math.random()*3);
@@ -122,6 +121,7 @@ void draw() {
    //    println("a1 =" + a1.sAry.length);  
    //    println(s1);
    // }
+   g.clearg();
 }
 
 

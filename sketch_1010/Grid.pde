@@ -49,6 +49,7 @@ class Grid {
     void clearRow(int row){
         for(int i=0;i<10;i++){
             gAry[row][i]=0;
+            grid[row][i].changeColor(color(209));
         }
     }
         
@@ -56,7 +57,9 @@ class Grid {
         // clears color of grid column if totally filled
 void clearCol(int col){
    for(int i=0;i<10;i++){
-     gAry[i][col]=0;}
+     gAry[i][col]=0;
+     grid[i][col].changeColor(color(209));
+   }
 }
 
   // clears grid values
@@ -65,11 +68,11 @@ void clearg(){
   int numcol=0;
   for(int i=0;i<10;i++){
     for(int j=0;j<10;j++){
-      if(gAry[i][j]==1){ numrow+=1;}
-      if(gAry[j][i]==1){ numcol+=1;}
+      if(gAry[i][j]>0){ numrow+=1;}
+      if(gAry[j][i]>0){ numcol+=1;}
     }
-    if(numrow==9){clearRow(i);}
-    if(numcol==9){clearCol(i);}
+    if(numrow==10){clearRow(i);}
+    if(numcol==10){clearCol(i);}
     numrow=0;
     numcol=0;
   }
