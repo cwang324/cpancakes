@@ -21,16 +21,16 @@ void setup() {
   
   // randomly generating shapes
   
-  int n = (int) (Math.random()*3);
-  if (n==0){
-    A1 = new shapeA(90,275);
-  }else if (n==1){
-    A1 = new shapeB(90,275);
-  }else{
-    A1 = new shapeC(90,275);
-  }
+  //int n = (int) (Math.random()*3);
+  //if (n==0){
+  //  A1 = new shapeA(90,275);
+  //}else if (n==1){
+  //  A1 = new shapeB(90,275);
+  //}else{
+  //  A1 = new shapeC(90,275);
+  //}
   
-  //A1 = new shapeA(90,275);
+  A1 = new shapeA(90,275);
   B1 = new shapeB(240,275);
   C1 = new shapeC(160,275);
 }
@@ -63,12 +63,16 @@ void draw() {
   g.changecellcolor();
   g.clearg();
   //mousePressed();
-  //println(mouseX + ", " + mouseY);
-  //println(g.validX(mouseX) + ", " + g.validY(mouseY))
+  println(mouseX + ", " + mouseY);
+  println(g.validX(mouseX) + ", " + g.validY(mouseY));
   //println("g.gAry (0,0) value " + g.gAry[0][0]);
   
-  println((int)(Math.random()*3));
-  
+  //println((int)(Math.random()*3));
+  if (s1!=null){
+  println("length= " + s1.sAry.length); 
+  println("A1 =" + A1.sAry.length);
+  println(s1);
+  }
 }
    int num=0;
 
