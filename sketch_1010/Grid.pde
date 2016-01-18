@@ -105,42 +105,44 @@ int convertY(int y){
     return (y-30)/21;
   }
   
-  // changes gAry values (dropping the shape) if the shape is placed on an empty space in the grid
-  void dropShape(int[][] ary, int x, int y){
-    // checks if in grid
-    if ((x<10 && x>=0) && (y<10 && y>=0)){
-      
-      // checks if in empty space in grid
-      for (int row=0; row < ary.length; row++){
-        for  (int col=0; col<ary[0].length; col++){
-          if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)){
-            return;
-          }
-        }
-      }
-    }else{
-      return;
-    }
-    
-    // changing values in gAry
-    for (int row=0; row < ary.length; row++){
-      for  (int col=0; col<ary[0].length; col++){
-        gAry[row+x][col+y]+=ary[row][col];
-      }
-    }
-    
-    return;
-    
-    }
-    
-    // checks if the shape is being dropped inside the grid
-    boolean validLocation(int xcor, int ycor){
-      if ( (xcor < 10 && xcor >=0) && (ycor<10 && ycor>=0)){
-      return true;
-    }
-      return false;
-    }
   
+  // changes gAry values (dropping the shape) if the shape is placed on an empty space in the grid
+  void dropShape(int[][] ary, int x, int y) {
+    
+      println ("\n=======================\nGrid.dropShap() method. input argument ary = " + ary  + "\n=======================\n");
+    
+      // checks if in grid
+      if ((x<10 && x>=0) && (y<10 && y>=0)) {
+      
+          // checks if in empty space in grid
+          for (int row=0; row < ary.length; row++){
+              for  (int col=0; col<ary[0].length; col++){
+                  if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
+                      return;
+                  }
+              }
+          }
+      } 
+      
+      //else {
+      //    return;
+      //}
+    
+      // changing values in gAry
+      for (int row=0; row < ary.length; row++) {
+          for  (int col=0; col<ary[0].length; col++) {
+              gAry[row+x][col+y]+=ary[row][col];
+          }
+      }
+  }
+    
+  // checks if the shape is being dropped inside the grid
+  boolean validLocation(int xcor, int ycor) {
+      if ( (xcor < 10 && xcor >=0) && (ycor<10 && ycor>=0)){
+         return true;
+      }
+      return false;
+  }
   
 }
   

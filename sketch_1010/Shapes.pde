@@ -1,43 +1,43 @@
-abstract class Shapes{
+abstract class Shapes {
  
- boolean followMouse=false;
- float x,y, origX, origY;
- int[][] sAry;
- boolean visible;
-
+    boolean followMouse=false;
+    float x,y, origX, origY;
+    protected int[][] sAry = null;
+    boolean visible;
  
+    Shapes (float xcor, float ycor) {
+        x=xcor;
+        y=ycor;
+        origX=xcor;
+        origY=ycor;
+        visible=true;
+    }
  
- Shapes(float xcor, float ycor){
-  x=xcor;
-  y=ycor;
-  origX=xcor;
-  origY=ycor;
-  visible=true;
-  sAry = new int[0][0];
- }
- 
- void display(){};
+    abstract void display();
  
   
-  // acts as the switch for dragShape() whether to follow the mouse or not
- void toggleFollow(){
-  followMouse=!followMouse; 
- }
+    //// acts as the switch for dragShape() whether to follow the mouse or not
+    //void toggleFollow() {
+    //    followMouse=!followMouse; 
+    //}
   
- // changes Shape coordinates based on mouse coordinates if followMouse=true and returns Shape to original position if 
- // Mouse=false
- void dragShape(){
+    void setFollowMouse(boolean flag) {
+        this.followMouse = flag;
+    }  
+    
   
-  if (followMouse){
-    x = mouseX;
-    y = mouseY;
-  }else{
-    x = origX;
-    y = origY;
-  }
- }
- 
- 
+  
+    // changes Shape coordinates based on mouse coordinates if followMouse=true and returns Shape to original position if 
+    // Mouse=false
+    void dragShape() {
+        if (followMouse) {
+            x = mouseX;
+            y = mouseY;
+        } else {
+            x = origX;
+            y = origY;
+        }
+    } 
  }
  
  
