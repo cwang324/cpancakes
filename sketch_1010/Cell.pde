@@ -46,4 +46,10 @@ class Cell {
     fill(currentColor);
     rect(x,y,w,h); 
   }
+  
+  public String toString()
+  {
+    return "cell[" + row +"][" + col + "], x,y,w,h=[" + x + "," + y + "," + w + "," + h + "], color = " + currentColor + "  ";
+  }  
+  
 }

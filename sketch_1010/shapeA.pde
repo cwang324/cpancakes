@@ -7,13 +7,6 @@ class shapeA extends Shapes {
        int[][] localAry = {{1}};  
        this.sAry = localAry;       
    }
-
- 
-  //void display() {
-  //     stroke(255);
-  //     fill(0);
-  //     rect(x,y,20,20); 
-  //}
   
   String toString() {
         return "shapeA picked up = " + Arrays.toString(sAry);

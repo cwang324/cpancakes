@@ -1,21 +1,16 @@
 class Grid {
-    int row, col;
- 
+    int row, col; 
     Cell[][] grid;
     int[][] gAry;
 
-    Grid(int row, int col) {
+    Grid ( int row, int col ) {
         this.row = row;
         this.col = col;
-        grid = new Cell[cols][rows];
+        grid = new Cell[row][col];
         
-        for (int i = 0; i < cols; i++) {
-            for (int j = 0; j < rows; j++) {
-                // Initialize each object
-                // rwang 
-                //grid[i][j] = new Cell(i*21+75,j*21+30,20,20,color(209));
-                // pass in row and col as well
-                grid[i][j] = new Cell(i, j, i*21+75,j*21+30,20,20,color(209));
+        for ( int i = 0; i < row; i++ ) {
+            for ( int j = 0; j < col; j++ ) {
+                grid[i][j] = new Cell( i, j, j*21+75, i*21+30, 20, 20, color(209) );                
             }
         }
         gAry = new int[10][10]; 
@@ -23,31 +18,31 @@ class Grid {
 
   
     void display() {
-       print("\n !!!!!!!!!!!!!!!!!!!!\ndisplay the whole grid\n");
-        for (int i = 0; i < cols; i++) {
-            for (int j = 0; j < rows; j++) {
-               print("display grid[" + i + "][" + j + "]");
+       //print("\n !!!!!!!!!!!!!!!!!!!!\ndisplay the whole grid\n");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+           //    print("display grid "+ grid[i][j]);
                grid[i][j].display();               
             }
-            println();
+           // println();
         }
     }
 
 
-    // changes the color of the grid if gAry value is not 0, indicating filled position
-    void changeCellColor() {
-        for(int i=0;i<10;i++) {
-            for(int j=0;j<10;j++) {
-                if(gAry[i][j]==1) {
-                    grid[i][j].changeColor(color(0));
-                }
+   //// changes the color of the grid if gAry value is not 0, indicating filled position
+   //void changeCellColor() {
+   //    for(int i=0;i<10;i++) {
+   //        for(int j=0;j<10;j++) {
+   //            if(gAry[i][j]==1) {
+   //                grid[i][j].changeColor(color(0));
+   //            }
                 
-                if (gAry[i][j]==0) {
-                    grid[i][j].changeColor(color(209));
-                }
-            }
-        }
-    }
+   //            if (gAry[i][j]==0) {
+   //                grid[i][j].changeColor(color(209));
+   //            }
+   //        }
+   //    }
+   //}
 
 
     // clears color of grid row if totally filled
@@ -144,8 +139,12 @@ int convertY(int y){
       
       // changing values in gAry
       for (int row=0; row < ary.length; row++) {        
-          for  (int col=0; col<ary[row].length; col++) {         
+          for  (int col=0; col<ary[row].length; col++) {            
+              int i = row+x;
+              int j = col+y;
+              //println("dropShape() updating grid[" + i + "," + j + "] to color 0");
               gAry[row+x][col+y]+=ary[row][col];
+              grid[row+x][col+y].changeColor(color(0)); 
           }
       }
 

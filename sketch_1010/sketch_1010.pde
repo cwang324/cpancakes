@@ -78,7 +78,8 @@ void draw() {
     a1.dragShape();
     b1.dragShape();
     c1.dragShape();
-    g.changeCellColor();
+    // no need
+    //g.changeCellColor();
     g.clearg();
     
     if (regen==0){
@@ -112,8 +113,8 @@ void draw() {
     }
     //mousePressed();
     //println(mouseX + ", " + mouseY);
-    //println(g.validX(mouseX) + ", " + g.validY(mouseY));
-    //println("g.gAry (0,0) value " + g.gAry[0][0]);
+    println(g.validX(mouseX) + ", " + g.validY(mouseY));
+    println("g.gAry (0,0) value " + g.gAry[0][0]);
   
     //println((int)(Math.random()*3));
    //if ( s1 != null) {

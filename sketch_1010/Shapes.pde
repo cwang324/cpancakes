@@ -6,7 +6,7 @@ abstract class Shapes {
     protected int[][] sAry = null;
     boolean visible;
  
-    Shapes (float xcor, float ycor) {
+    Shapes ( float xcor, float ycor ) {
         x=xcor;
         y=ycor;
         origX=xcor;
@@ -14,24 +14,17 @@ abstract class Shapes {
         visible=true;
     }
  
-    //abstract void display();
     abstract boolean contains(int mX, int mY);
- 
   
-    //// acts as the switch for dragShape() whether to follow the mouse or not
-    //void toggleFollow() {
-    //    followMouse=!followMouse; 
-    //}
-  
-    void setFollowMouse(boolean flag) {
+    void setFollowMouse ( boolean flag ) {
         this.followMouse = flag;
     }  
     
-  
-  
+   
     // changes Shape coordinates based on mouse coordinates if followMouse=true and returns Shape to original position if 
     // Mouse=false
     void dragShape() {
+      
         if (followMouse) {
             x = mouseX;
             y = mouseY;
@@ -45,6 +38,7 @@ abstract class Shapes {
     void display () {
         stroke(255);
         fill(0);
+        
         float startX = x;
         for ( int i = 0; i < sAry.length; i++ ) {
             for ( int j = 0; j < sAry[i].length; j++ )  {                
@@ -53,13 +47,12 @@ abstract class Shapes {
             }
             x = startX;
             y += CELL_SIZE;
-            
         }
     }  
     
     
-   public void printArray(int[][] xArray)  {
-       for ( int i = 0; i < xArray.length; i++) {
+   public void printArray ( int[][] xArray ) {
+       for ( int i = 0; i < xArray.length; i++ ) {
            for ( int j = 0; j < xArray[i].length; j++ ) {
                print ( xArray[i][j] );
                if ( j < xArray[i].length-1 ) {
