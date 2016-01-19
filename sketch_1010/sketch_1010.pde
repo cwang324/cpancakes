@@ -124,7 +124,7 @@ void draw() {
    // }
    g.clearg();
    if(EndGame()){
-     tint(255,127);
+   
      noCursor();
    }
 }
@@ -164,6 +164,7 @@ void draw() {
 
 
   void mousePressed() {
+    if(!EndGame()){
       if (!pieceInHand) 
       {     
           
@@ -185,7 +186,7 @@ void draw() {
           //pieceInHand = true;
           //println("set pieceInHand to " + pieceInHand );
           checkIfAShapeIsSelected();          
-      } 
+      }} 
       //else if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
       //    println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
       //    g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)); // want to make dropShape a boolean
@@ -236,8 +237,12 @@ boolean EndGame(){
      if(g.GameOver(c1.sAry)){
        num2++;}}
    if(num1==num2){
+     println("true");
      return true;
+     
    }
+   println("false");
    return false;
+   
   }  
   
