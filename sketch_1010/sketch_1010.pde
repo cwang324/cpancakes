@@ -221,17 +221,23 @@ void draw() {
       }}
       
 boolean EndGame(){
-   int num=0;
-   if(a1.visible){GO.add(a1);}
-   if(b1.visible){GO.add(b1);}
-   if(c1.visible){GO.add(c1);}
-   for(int i=0;i<GO.size();i++){
-     if(g.GameOver(GO.get(i).sAry)){
-       num+=1;}
+   int num1=0;
+   int num2=0;
+   if(a1.visible){
+     num1++;
+     if(g.GameOver(a1.sAry)){
+       num2++;}}
+   if(b1.visible){
+     num1++;
+     if(g.GameOver(b1.sAry)){
+       num2++;}}
+   if(c1.visible){
+     num1++;
+     if(g.GameOver(c1.sAry)){
+       num2++;}}
+   if(num1==num2){
+     return true;
    }
-   if(num==GO.size()){
-     return true;}
-   return false;    
+   return false;
   }  
-      
   
