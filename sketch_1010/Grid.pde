@@ -7,15 +7,17 @@ class Grid {
         this.row = row;
         this.col = col;
         grid = new Cell[row][col];
-        
-        for ( int i = 0; i < row; i++ ) {
+        reset();
+    } 
+
+    void reset(){
+      for ( int i = 0; i < row; i++ ) {
             for ( int j = 0; j < col; j++ ) {
                 grid[i][j] = new Cell( i, j, j*21+75, i*21+30, 20, 20, color(209) );                
             }
         }
         gAry = new int[10][10]; 
-    } 
-
+    }
   
     void display() {
        //print("\n !!!!!!!!!!!!!!!!!!!!\ndisplay the whole grid\n");
@@ -174,8 +176,10 @@ int convertY(int y){
     
   // checks if the shape is being dropped inside the grid
   boolean validLocation(int xcor, int ycor) {
+      
       if ( (xcor < 10 && xcor >=0) && (ycor<10 && ycor>=0)){
          return true;
+         
       }
       return false;
   }
