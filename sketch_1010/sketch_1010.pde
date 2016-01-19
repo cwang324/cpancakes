@@ -6,6 +6,7 @@ Shapes  a1;
 Shapes  b1;
 Shapes  c1;
 Shapes s1 = null;
+ArrayList<Shapes> GO;
 boolean pieceInHand = false;
 int regen = 2;
 
@@ -122,6 +123,10 @@ void draw() {
    //    println(s1);
    // }
    g.clearg();
+   if(EndGame()){
+     tint(255,127);
+     noCursor();
+   }
 }
 
 
@@ -213,7 +218,20 @@ void draw() {
           } else {                        
               s1.setFollowMouse(false);              
           }          
-      }    
+      }}
+      
+boolean EndGame(){
+   int num=0;
+   if(a1.visible){GO.add(a1);}
+   if(b1.visible){GO.add(b1);}
+   if(c1.visible){GO.add(c1);}
+   for(int i=0;i<GO.size();i++){
+     if(g.GameOver(GO.get(i).sAry)){
+       num+=1;}
+   }
+   if(num==GO.size()){
+     return true;}
+   return false;    
   }  
       
   

@@ -169,6 +169,7 @@ int convertY(int y){
        }
    }    
     
+  
     
     
   // checks if the shape is being dropped inside the grid
@@ -179,5 +180,33 @@ int convertY(int y){
       return false;
   }
   
+  
+  boolean GameOver(int[][] ary){
+    for(int i=0;i<10;i++){
+      for(int j=0;j<10;j++){
+        if(!(NoSpace(ary,i,j))){
+          println("false");
+          return false;
+          }
+      }
+    }
+    println("true");
+    return true;
+    
+  }
+    
+  
+  boolean NoSpace(int[][] ary, int x,int y){
+    if ((x<10 && x>=0) && (y<10 && y>=0)) {
+          for (int row=0; row < ary.length; row++){
+              for  (int col=0; col<ary[0].length; col++){
+                  if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
+                      return true;
+                  }
+              }
+          }
+  }
+  return false;
+  }
 }
   
