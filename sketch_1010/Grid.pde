@@ -122,7 +122,7 @@ int convertY(int y){
       println ("\n=======================\nGrid.dropShape() method. input argument ary = " + ary  + "\n=======================\n");
     
       // checks if in grid
-      if ((x<10 && x>=0) && (y<10 && y>=0)) {
+      if (((x+ary[0].length)<10  && (x+ary[0].length)>=0) && (y<10 && y>=0)) {
       
           // checks if in empty space in grid
           for (int row=0; row < ary.length; row++){
@@ -132,7 +132,9 @@ int convertY(int y){
                   }
               }
           }
-      } 
+      }else{
+        return false;
+      }
       
       println("print shape array");
       printArray(ary);  
