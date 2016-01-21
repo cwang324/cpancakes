@@ -104,8 +104,8 @@ void draw() {
     }
     //mousePressed();
     //println(mouseX + ", " + mouseY);
-    println(g.validX(mouseX) + ", " + g.validY(mouseY));
-    println("g.gAry (0,0) value " + g.gAry[0][0]);
+    //println(g.validX(mouseX) + ", " + g.validY(mouseY));
+    //println("g.gAry (0,0) value " + g.gAry[0][0]);
   
     //println((int)(Math.random()*3));
    //if ( s1 != null) {
@@ -170,7 +170,7 @@ void mousePressed() {
           //    c1.setFollowMouse(true);
           //    s1=c1;
           //    println("\n=========================\nsetting s1 to c1\n  s1 = " + s1 + ", c1 = " + c1 +  "\n=========================\n");              
-          //}       
+          //}        //<>//
           //pieceInHand = true;
           //println("set pieceInHand to " + pieceInHand );
           checkIfAShapeIsSelected();          
@@ -227,10 +227,10 @@ boolean EndGame(){
     if(g.GameOver(c1.sAry)){
         num2++;}}
     if(num1==num2){
-        println("true");
+        //println("true");
         return true;
         }
-    println("false");
+    //println("false");
     return false;
   }  
   

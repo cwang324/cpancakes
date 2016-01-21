@@ -118,10 +118,11 @@ int validY(int y){
 // changes gAry values (dropping the shape) if the shape is placed on an empty space in the grid
 boolean dropShape(int[][] ary, int x, int y) {
     
-      println ("\n=======================\nGrid.dropShape() method. input argument ary = " + ary  + "\n=======================\n");
-    
+      //println ("\n=======================\nGrid.dropShape() method. input argument ary = " + ary  + "\n=======================\n");
+      println ((x+ary[0].length-1));
+      println((y+ary.length-1));
       // checks if in grid
-      if (((x+ary[0].length)<10  && (x+ary[0].length)>=0) && (y<10 && y>=0)) {
+      if (((x+ary.length-1)<10  && x>=0) && ((y+ary[0].length-1)<10 && y>=0)) {
       
           // checks if in empty space in grid
           for (int row=0; row < ary.length; row++){
@@ -135,13 +136,13 @@ boolean dropShape(int[][] ary, int x, int y) {
         return false;
       }
       
-      println("print shape array");
-      printArray(ary);  
+      //println("print shape array");
+      //printArray(ary);  
       
       
       // before changing gAry
-      println("Before changing gAry");
-      printArray(gAry);  
+      //println("Before changing gAry");
+      //printArray(gAry);  
       
       // changing values in gAry
       for (int row=0; row < ary.length; row++) {        
