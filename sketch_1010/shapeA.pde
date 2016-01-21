@@ -4,7 +4,8 @@ class shapeA extends Shapes {
 shapeA (float xcor, float ycor){   
     super(xcor, ycor);       
     int[][] localAry = {{1}};  
-    this.sAry = localAry;       
+    this.sAry = localAry;   
+    this.c = color(100, 59, 129);
   }
   
 String toString() {

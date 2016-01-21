@@ -1,4 +1,4 @@
-Grid g;
+Grid g; //<>// //<>//
 Shapes  a1;
 Shapes  b1;
 Shapes  c1;
@@ -157,7 +157,7 @@ void mousePressed() {
     if (!pieceInHand) 
       {     
                   
-          //if (mouseX<110) { //<>//
+          //if (mouseX<110) {
           //    a1.setFollowMouse(true);
           //    s1 = a1;
           //    println("\n=========================\nsetting s1 to a1\n  s1 = " + s1 + ", a1 = " + a1 +  "\n=========================\n");
@@ -170,7 +170,7 @@ void mousePressed() {
           //    c1.setFollowMouse(true);
           //    s1=c1;
           //    println("\n=========================\nsetting s1 to c1\n  s1 = " + s1 + ", c1 = " + c1 +  "\n=========================\n");              
-          //}        //<>//
+          //}       
           //pieceInHand = true;
           //println("set pieceInHand to " + pieceInHand );
           checkIfAShapeIsSelected();          
@@ -199,7 +199,7 @@ void mouseReleased() {
     s1.setFollowMouse(false);          
     if ( g.validLocation(g.validY(mouseY), g.validX(mouseX))) {
       println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
-      if ( g.dropShape(s1.sAry, g.validY(mouseY), g.validX(mouseX)) ){ // want to make dropShape a boolean
+      if ( g.dropShape(s1.sAry, g.validY(mouseY), g.validX(mouseX), s1.c) ){ // want to make dropShape a boolean
       s1.visible=false;
       s1 = null;
       regen-=1;

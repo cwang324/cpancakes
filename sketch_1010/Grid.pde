@@ -116,7 +116,7 @@ int validY(int y){
   
   
 // changes gAry values (dropping the shape) if the shape is placed on an empty space in the grid
-boolean dropShape(int[][] ary, int x, int y) {
+boolean dropShape(int[][] ary, int x, int y, color c) {
     
       //println ("\n=======================\nGrid.dropShape() method. input argument ary = " + ary  + "\n=======================\n");
       println ((x+ary[0].length-1));
@@ -151,7 +151,7 @@ boolean dropShape(int[][] ary, int x, int y) {
               int j = col+y;
               //println("dropShape() updating grid[" + i + "," + j + "] to color 0");
               gAry[row+x][col+y]+=ary[row][col];
-              grid[row+x][col+y].changeColor(color(0)); 
+              grid[row+x][col+y].changeColor(c); 
           }
       }
 

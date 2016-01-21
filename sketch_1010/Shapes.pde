@@ -5,6 +5,7 @@ boolean followMouse=false;
 float x,y, origX, origY;
 protected int[][] sAry = null;
 boolean visible;
+color c;
  
 Shapes ( float xcor, float ycor ) {
     x=xcor;
@@ -12,6 +13,7 @@ Shapes ( float xcor, float ycor ) {
     origX=xcor;
     origY=ycor;
     visible=true;
+    c = color(0);
   }
  
 abstract boolean contains(int mX, int mY);
@@ -36,7 +38,7 @@ void dragShape() {
     
 void display () {
     stroke(255);
-    fill(0);
+    fill(c);
     float startX = x;
     for ( int i = 0; i < sAry.length; i++ ) {
       for ( int j = 0; j < sAry[i].length; j++ )  {               
