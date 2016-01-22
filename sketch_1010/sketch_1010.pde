@@ -18,20 +18,20 @@ void setup() {
     // randomly generating shapes
   
     int n = (int) (Math.random()*6);
-    //if (n==0){
-    //     a1 = new shapeA(90,275);
-    //}else if (n==1){
-    //     a1 = new shapeB(90,275);
-    //}else if(n==2){
-    //     a1 = new shapeC(90,275);
-    //}else if(n==3){
-    //     a1 = new ShapeD(90,275);
-    //}else if(n==4){
-    //     a1 = new ShapeE(90,275);
-    //}else{
-    //     a1 = new ShapeF(90,275);
-    //}
-    a1 = new ShapeF(90,275);
+    if (n==0){
+        a1 = new shapeA(90,275);
+    }else if (n==1){
+        a1 = new shapeB(90,275);
+    }else if(n==2){
+        a1 = new shapeC(90,275);
+    }else if(n==3){
+        a1 = new ShapeD(90,275);
+    }else if(n==4){
+        a1 = new ShapeE(90,275);
+    }else{
+        a1 = new ShapeF(90,275);
+    }
+    
     n = (int) (Math.random()*6);
     if (n==0){
          b1 = new shapeA(160,275);
@@ -108,23 +108,35 @@ void draw() {
             a1 = new ShapeF(90,275);
        }
         
-        n = (int) (Math.random()*3);
-        if (n==0){
-             b1 = new shapeA(160,275);
-        }else if (n==1){
-             b1 = new shapeB(160,275);
-        }else{
-             b1 = new shapeC(160,275);
-        }
-        
-        n = (int) (Math.random()*3);
-        if (n==0){
-             c1 = new shapeA(240,275);
-        }else if (n==1){
-             c1 = new shapeB(240,275);
-        }else{
-             c1 = new shapeC(240,275);
-        }
+       n = (int) (Math.random()*6);
+    if (n==0){
+         b1 = new shapeA(160,275);
+    }else if (n==1){
+         b1 = new shapeB(160,275);
+    }else if (n==2){
+         b1 = new shapeC(160,275);
+    }else if (n==3){
+         b1 = new ShapeD(160,275);
+    }else if (n==4){
+         b1 = new ShapeE(160,275);
+    }else{
+         b1 = new ShapeF(160,275);
+    }
+    
+    n = (int) (Math.random()*6);
+    if (n==0){
+         c1 = new shapeA(240,275);
+    }else if (n==1){
+         c1 = new shapeB(240,275);
+    }else if (n==2){
+         c1 = new shapeC(240,275);
+    }else if(n==3){
+         c1 = new ShapeD(240,275);
+    }else if(n==4){
+         c1 = new ShapeE(240,275);
+    }else{
+         c1 = new ShapeF(240,275);
+    }
             regen=3;
     }
     //mousePressed();
