@@ -41,9 +41,11 @@ void display () {
     fill(c);
     float startX = x;
     for ( int i = 0; i < sAry.length; i++ ) {
-      for ( int j = 0; j < sAry[i].length; j++ )  {               
-        rect(x,y,CELL_SIZE,CELL_SIZE);
-        x += CELL_SIZE;
+      for ( int j = 0; j < sAry[i].length; j++ )  {   
+        if (sAry[i][j]==1){
+            rect(x,y,CELL_SIZE,CELL_SIZE);
+            x += CELL_SIZE;
+        }
       }
       x = startX;
       y += CELL_SIZE;

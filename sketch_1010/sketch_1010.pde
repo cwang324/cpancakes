@@ -1,4 +1,4 @@
-Grid g; //<>// //<>//
+Grid g; //<>// //<>// //<>// //<>//
 Shapes  a1;
 Shapes  b1;
 Shapes  c1;
@@ -18,20 +18,20 @@ void setup() {
     // randomly generating shapes
   
     int n = (int) (Math.random()*6);
-    if (n==0){
-         a1 = new shapeA(90,275);
-    }else if (n==1){
-         a1 = new shapeB(90,275);
-    }else if(n==2){
-         a1 = new shapeC(90,275);
-    }else if(n==3){
-         a1 = new ShapeD(90,275);
-    }else if(n==4){
-         a1 = new ShapeE(90,275);
-    }else{
-         a1 = new ShapeF(90,275);
-    }
-  
+    //if (n==0){
+    //     a1 = new shapeA(90,275);
+    //}else if (n==1){
+    //     a1 = new shapeB(90,275);
+    //}else if(n==2){
+    //     a1 = new shapeC(90,275);
+    //}else if(n==3){
+    //     a1 = new ShapeD(90,275);
+    //}else if(n==4){
+    //     a1 = new ShapeE(90,275);
+    //}else{
+    //     a1 = new ShapeF(90,275);
+    //}
+    a1 = new ShapeF(90,275);
     n = (int) (Math.random()*6);
     if (n==0){
          b1 = new shapeA(160,275);
@@ -84,6 +84,7 @@ void draw() {
     if (c1.visible){
         c1.display();
     }
+    
   
     a1.dragShape();
     b1.dragShape();
@@ -92,15 +93,21 @@ void draw() {
     //g.changeCellColor();
     
     if (regen==0){
-            int n = (int) (Math.random()*3);
-        if (n==0){
-             a1 = new shapeA(90,275);
-        }else if (n==1){
-             a1 = new shapeB(90,275);
-        }else{
-             a1 = new shapeC(90,275);
-        }
-      
+           int n = (int) (Math.random()*6);
+       if (n==0){
+            a1 = new shapeA(90,275);
+       }else if (n==1){
+            a1 = new shapeB(90,275);
+       }else if (n==2){
+            a1 = new shapeC(90,275);
+       }else if (n==3){
+            a1 = new ShapeD(90,275);
+       }else if (n==4){
+            a1 = new ShapeE(90,275);
+       }else if (n==5){
+            a1 = new ShapeF(90,275);
+       }
+        
         n = (int) (Math.random()*3);
         if (n==0){
              b1 = new shapeA(160,275);
@@ -132,7 +139,7 @@ void draw() {
    //    println(s1);
    // }
     g.clearg();
-    if(EndGame()){
+    if ( EndGame() ){
     g.reset();
     regen=0;
     }

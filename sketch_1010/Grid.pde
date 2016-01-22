@@ -151,7 +151,9 @@ boolean dropShape(int[][] ary, int x, int y, color c) {
               int j = col+y;
               //println("dropShape() updating grid[" + i + "," + j + "] to color 0");
               gAry[row+x][col+y]+=ary[row][col];
-              grid[row+x][col+y].changeColor(c); 
+              if (gAry[row+x][col+y]>0){
+                  grid[row+x][col+y].changeColor(c); 
+              }
           }
       }
 

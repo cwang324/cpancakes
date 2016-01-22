@@ -7,7 +7,7 @@ shapeB(float xcor, float ycor) {
     super(xcor, ycor);
     int[][] localAry = {{1}, {1}};
     this.sAry = localAry;  
-    this.c = color(237, 148, 73);
+    this.c = color(245,208,76);
   }
   
 String toString() {
