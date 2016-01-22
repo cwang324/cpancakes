@@ -3,6 +3,7 @@ Shapes  a1;
 Shapes  b1;
 Shapes  c1;
 Shapes s1 = null;
+
 ArrayList<Shapes> GO;
 boolean pieceInHand = false;
 int regen = 3;
@@ -15,6 +16,7 @@ void setup() {
   
     g = new Grid(10,10);
   
+   
     // randomly generating shapes
   
     int n = (int) (Math.random()*6);
@@ -67,6 +69,7 @@ void setup() {
 }
 
 
+
   
 void draw() {
     background(255); 
@@ -75,6 +78,9 @@ void draw() {
   //  grid[2][3].changecolor();
   //}
   
+    textSize(20);
+    text(g.score,10,30);
+    fill(0);
     if (a1.visible){
         a1.display();
     }

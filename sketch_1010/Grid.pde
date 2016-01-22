@@ -2,10 +2,12 @@ class Grid {
 int row, col; 
 Cell[][] grid;
 int[][] gAry;
+int score;
 
 Grid ( int row, int col ) {
     this.row = row;
     this.col = col;
+    score=0;
     grid = new Cell[row][col];
     reset();
   } 
@@ -72,8 +74,14 @@ void clearg(){
         if(gAry[i][j]>0){ numrow+=1;}
         if(gAry[j][i]>0){ numcol+=1;}
     }
-      if(numrow==10){clearRow(i);}
-      if(numcol==10){clearCol(i);}
+      if(numrow==10){
+            clearRow(i); 
+            score+=10;
+          }
+      if(numcol==10){
+            clearCol(i); 
+            score+=10;
+          }
       numrow=0;
       numcol=0;
     }
@@ -153,6 +161,7 @@ boolean dropShape(int[][] ary, int x, int y, color c) {
               gAry[row+x][col+y]+=ary[row][col];
               if (gAry[row+x][col+y]>0 && grid[row+x][col+y].currentColor==color(209)){
                   grid[row+x][col+y].changeColor(c); 
+                  score+=10;
               }
           }
       }
