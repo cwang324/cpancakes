@@ -15,7 +15,7 @@ Grid ( int row, int col ) {
 void reset(){
     for ( int i = 0; i < row; i++ ) {
       for ( int j = 0; j < col; j++ ) {
-        grid[i][j] = new Cell( i, j, j*21+75, i*21+30, 20, 20, color(209) );                
+        grid[i][j] = new Cell( i, j, j*21+75, i*21+30, 20, 20, 4, color(209) );                
       }
     }
     gAry = new int[10][10]; 

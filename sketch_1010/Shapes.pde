@@ -43,7 +43,7 @@ void display () {
     for ( int i = 0; i < sAry.length; i++ ) {
       for ( int j = 0; j < sAry[i].length; j++ )  {   
         if (sAry[i][j]==1){
-            rect(x,y,CELL_SIZE,CELL_SIZE);
+            rect(x,y,CELL_SIZE,CELL_SIZE,4);
             x += CELL_SIZE;
         }
       }

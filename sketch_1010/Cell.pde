@@ -3,24 +3,27 @@ class Cell {
 // as well as its size with the variables x,y,w,h
 float x,y;   
 float w,h;   
+float f;
 color currentColor;
 int row;
 int col;
 
 
-Cell(float tempX, float tempY, float tempW, float tempH, color colorc) {
+Cell(float tempX, float tempY, float tempW, float tempH, float fillet, color colorc) {
     x = tempX;
     y = tempY;
     w = tempW;
     h = tempH;
+    f = fillet;
     currentColor=colorc;
   } 
 
-Cell(int row, int col, float tempX, float tempY, float tempW, float tempH, color colorc) {
+Cell(int row, int col, float tempX, float tempY, float tempW, float tempH,  float fillet, color colorc) {
     x = tempX;
     y = tempY;
     w = tempW;
     h = tempH;
+    f = fillet;
     currentColor=colorc;
     this.row = row;
     this.col = col;
@@ -44,7 +47,7 @@ void changeColor(color colorz){
 void display() {
     stroke(255);
     fill(currentColor);
-    rect(x,y,w,h); 
+    rect(x,y,w,h,f); 
   }
   
 public String toString()
