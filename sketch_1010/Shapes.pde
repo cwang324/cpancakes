@@ -16,7 +16,14 @@ Shapes ( float xcor, float ycor ) {
     c = color(0);
   }
  
-abstract boolean contains(int mX, int mY);
+boolean contains(int mX, int mY){
+    for (int row = 0; row < sAry.length; row++){
+      if ( !(mX>x && mX<(x+(sAry[row].length*20)) && (mY>y && mY<(y+(sAry.length*20))))){
+          return false;
+      }
+    }
+  return true;
+}
   
 void setFollowMouse ( boolean flag ) {
     this.followMouse = flag;

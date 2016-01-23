@@ -11,7 +11,5 @@ String toString() {
     return "shapeF picked up = " + Arrays.toString(sAry);
    }  
     
-boolean contains(int mX, int mY) {
-    return ( (mX>x && mX<(x+40)) && (mY>y && mY<(y+40)) );
-   }
+
 }
