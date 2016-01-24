@@ -1,3 +1,6 @@
+import processing.sound.*; //<>// //<>//
+
+SoundFile file;
 Grid g; //<>// //<>// //<>// //<>//
 Shapes  a1;
 Shapes  b1;
@@ -12,29 +15,30 @@ int cols = 10;
 int rows = 10;
 
 void setup() {
-    size(350,350);
+    size(370,350);
   
     g = new Grid(10,10);
   
    
     // randomly generating shapes
   
-    int n = (int) (Math.random()*6);
-    if (n==0){
-        a1 = new shapeA(90,275);
-    }else if (n==1){
-        a1 = new shapeB(90,275);
-    }else if(n==2){
-        a1 = new shapeC(90,275);
-    }else if(n==3){
-        a1 = new ShapeD(90,275);
-    }else if(n==4){
-        a1 = new ShapeE(90,275);
-    }else{
-        a1 = new ShapeF(90,275);
-    }
+    a1 = new ShapeG(90,275);
+    //int n = (int) (Math.random()*6);
+    //if (n==0){
+    //    a1 = new shapeA(90,275);
+    //}else if (n==1){
+    //    a1 = new shapeB(90,275);
+    //}else if(n==2){
+    //    a1 = new shapeC(90,275);
+    //}else if(n==3){
+    //    a1 = new ShapeD(90,275);
+    //}else if(n==4){
+    //    a1 = new ShapeE(90,275);
+    //}else{
+    //    a1 = new ShapeF(90,275);
+    //}
     
-    n = (int) (Math.random()*6);
+    int n = (int) (Math.random()*6);
     if (n==0){
          b1 = new shapeA(160,275);
     }else if (n==1){
@@ -66,6 +70,7 @@ void setup() {
     //a1 = new shapeA(90,275);
     //b1 = new shapeB(160,275);
     //c1 = new shapeC(240,275);
+    //file = new SoundFile(this, "Whoosh.mp3");
 }
 
 
@@ -79,7 +84,7 @@ void draw() {
   //}
   
     textSize(20);
-    text(g.score,10,30);
+    text(g.score,300,30);
     fill(0);
     if (a1.visible){
         a1.display();
@@ -244,6 +249,7 @@ void mouseReleased() {
       println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
       if ( g.dropShape(s1.sAry, g.validY(mouseY), g.validX(mouseX), s1.c) ){ // want to make dropShape a boolean
       s1.visible=false;
+      //file.play();
       s1 = null;
       regen-=1;
     }

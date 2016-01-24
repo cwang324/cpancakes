@@ -34,8 +34,8 @@ void setFollowMouse ( boolean flag ) {
 // Mouse=false
 void dragShape() {      
     if (followMouse) {
-      x = mouseX;
-      y = mouseY;
+      x = (mouseX-10);
+      y = (mouseY-10);
     } else {
       x = origX;
       y = origY;
