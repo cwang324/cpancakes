@@ -1,5 +1,7 @@
 //import processing.sound.*; //<>// //<>//
 int state;
+PImage startScreen;
+PImage score;
 //SoundFile file;
 Grid g; //<>// //<>// //<>// //<>//
 Shapes  a1;
@@ -19,7 +21,8 @@ int rows = 10;
 void setup() {
     state = 0;
     size(370,350);
-  
+    startScreen = loadImage("startscreen.png");
+    score = loadImage("score.png");
     g = new Grid(10,10);
   
    
@@ -40,8 +43,8 @@ void setup() {
     //}else{
     //    a1 = new ShapeF(90,275);
     //}
-    start = new Buttons(132,200,100,50,color(255,204,204));
-    restart = new Buttons(132,200,100,50,color(102,51,255));
+    start = new Buttons(132,200,100,50,color(153,255,51));
+    restart = new Buttons(132,200,100,50,color(153,255,51));
     
     int n = (int) (Math.random()*6);
     if (n==0){
@@ -83,7 +86,7 @@ void setup() {
   
 void draw() {
   if(state==0){
-    background(255);
+    image(startScreen,0,0,width,height);
     start.display();
     fill(255);
     triangle(170,210,170,240,200,225);
@@ -91,12 +94,12 @@ void draw() {
       state=1;}
   }
   if(state==2){
-    background(255);
     restart.display();
     fill(255);
     triangle(170,210,170,240,200,225);
     if(start.isover()&&mousePressed){
-      state=0;}
+      g.reset();
+      state=1;}
   }
     
     
@@ -106,9 +109,10 @@ void draw() {
   //if(b1.isover()&&mousePressed){
   //  grid[2][3].changecolor();
   //}
-  
+    image(score,150,0,66,50);
+    fill(102,204,255);
     textSize(20);
-    text(g.score,300,30);
+    text(g.score,200,45);
     fill(0);
     if (a1.visible){
         a1.display();

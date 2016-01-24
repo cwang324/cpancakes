@@ -15,10 +15,11 @@ Grid ( int row, int col ) {
 void reset(){
     for ( int i = 0; i < row; i++ ) {
       for ( int j = 0; j < col; j++ ) {
-        grid[i][j] = new Cell( i, j, j*21+75, i*21+30, 20, 20, 4, color(209) );                
+        grid[i][j] = new Cell( i, j, j*21+75, i*21+50, 20, 20, 4, color(209) );                
       }
     }
     gAry = new int[10][10]; 
+    score=0;
   }
   
 void display() {
@@ -100,9 +101,9 @@ int convertX(int x){
 }
 
 int convertY(int y){
-    if(y>=30){
+    if(y>=50){
     int colNum=0;
-    for(int i=y;i>=30;i-=21){
+    for(int i=y;i>=50;i-=21){
        colNum+=1;
      }
      return colNum;
@@ -119,7 +120,7 @@ int validX(int x){
   
 // converts Processing ycor to 10x10 grid ycor
 int validY(int y){
-    return (y-30)/21;
+    return (y-50)/21;
   }
   
   

@@ -21,7 +21,7 @@ boolean isover() {
 }
 
 void display() {
-    stroke(255);
+    noStroke();
     fill(colour);
     rect(x,y,w,h,10);
   }
