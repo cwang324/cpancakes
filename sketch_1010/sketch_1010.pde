@@ -10,6 +10,19 @@ Shapes  c1;
 Shapes s1 = null;
 Buttons start;
 Buttons restart;
+Shapes a = new shapeA();
+
+Shapes [] shapes = { new shapeA(),
+                     new shapeB(),
+                     new shapeC(),
+                     new ShapeD(),
+                     new ShapeE(),
+                     new ShapeF(),
+                     new ShapeG(),
+                     new ShapeH(),
+                     new ShapeI(),
+                     new ShapeJ(),
+                   };
 
 ArrayList<Shapes> GO;
 boolean pieceInHand = false;
@@ -28,8 +41,11 @@ void setup() {
    
     // randomly generating shapes
   
-    a1 = new ShapeG(90,275);
-    //int n = (int) (Math.random()*6);
+   
+    int n = (int) (Math.random()*6);
+    a1 = shapes[n].deepClone();
+    a1.setXY(90,275);
+    
     //if (n==0){
     //    a1 = new shapeA(90,275);
     //}else if (n==1){
@@ -46,7 +62,7 @@ void setup() {
     start = new Buttons(132,200,100,50,color(153,255,51));
     restart = new Buttons(132,200,100,50,color(153,255,51));
     
-    int n = (int) (Math.random()*6);
+    n = (int) (Math.random()*6);
     if (n==0){
          b1 = new shapeA(160,275);
     }else if (n==1){
@@ -154,7 +170,7 @@ void draw() {
          b1 = new shapeB(160,275);
     }else if (n==2){
          b1 = new shapeC(160,275);
-    }else if (n==3){
+    }else if (n==3){ //<>//
          b1 = new ShapeD(160,275);
     }else if (n==4){
          b1 = new ShapeE(160,275);

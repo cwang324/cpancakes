@@ -8,9 +8,13 @@ ShapeG(float xcor, float ycor){
                         {1,1,1},
                         {1,1,1}};  
     this.sAry = localAry;   
-    this.c = color(0,250,154);
+    this.c = color(64,224,208);
   }
   
+  ShapeG(){
+        this(0.0f, 0.0f); 
+    }
+    
 String toString() {
     return "ShapeG picked up = " + Arrays.toString(sAry);
   }  

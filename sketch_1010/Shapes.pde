@@ -1,4 +1,4 @@
-abstract class Shapes {
+class Shapes implements Cloneable{
    
 static final int CELL_SIZE = 20;
 boolean followMouse=false;
@@ -15,6 +15,10 @@ Shapes ( float xcor, float ycor ) {
     visible=true;
     c = color(0);
   }
+  
+Shapes (){
+  this(0,0);
+}
  
 boolean contains(int mX, int mY){
     for (int row = 0; row < sAry.length; row++){
@@ -41,6 +45,39 @@ void dragShape() {
       y = origY;
     }
   }
+   
+//Shapes clone(){
+//  return (Shapes) super.clone();
+//}
+    
+    Shapes deepClone() {
+        Shapes s = new Shapes();
+        s.followMouse = this.followMouse;
+        s.x = this.x;
+        s.y = this.y;
+        s.origX = this.origX;
+        s.origY = this.origY;
+        s.visible = this.visible;
+        s.c = this.c;
+      
+       int[][] newArray = new int[sAry.length][];
+       for ( int i = 0; i < sAry.length; i++ )
+       {
+          newArray[i] = new int[sAry[i].length];
+          for ( int j = 0; j < newArray[i].length; j++ )
+          {   newArray[i][j] = sAry[i][j];
+          }            
+       }
+       s.sAry = newArray;
+       return s;
+    }
+      
+    void setXY(int newX, int newY){
+      origX = newX;
+      x = newX;
+      origY = newY;
+      y=newY;
+    }
     
     
 void display () {

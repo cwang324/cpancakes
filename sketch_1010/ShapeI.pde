@@ -1,13 +1,15 @@
-class ShapeD extends Shapes {
+class ShapeI extends Shapes {
 
-ShapeD (float xcor, float ycor) {
+ShapeI (float xcor, float ycor) {
     super(xcor, ycor);
-    int[][] localAry = { {1,1,1} };
+    int[][] localAry = { {1},
+                         {1},
+                         {1} };
     this.sAry = localAry;  
     this.c = color(255,140,0);
   }
   
-  ShapeD(){
+  ShapeI(){
         this(0.0f, 0.0f); 
     }
   
