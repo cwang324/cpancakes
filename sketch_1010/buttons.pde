@@ -3,12 +3,14 @@ int x;
 int y;
 int w;
 int h;
+color colour;
     
-Buttons ( int xa,int ya,int wn,int hn ) {
+Buttons ( int xa,int ya,int wn,int hn, color c) {
     x = xa;
     y = ya;
     w = wn;
     h = hn;
+    colour=c;
   }
     
 boolean isover() {
@@ -20,7 +22,7 @@ boolean isover() {
 
 void display() {
     stroke(255);
-    fill(162);
-    rect(x,y,w,h);
+    fill(colour);
+    rect(x,y,w,h,10);
   }
 }
