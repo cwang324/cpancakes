@@ -30,7 +30,7 @@ class Shape implements Cloneable{
               return false;
           }
         }
-      return true;
+        return true;
     }
   
     void setFollowMouse ( boolean flag ) {
@@ -54,15 +54,15 @@ class Shape implements Cloneable{
     // Mouse=false
     void dragShape() {      
         if (followMouse) {
-          x = (mouseX-10);
-          y = (mouseY-10);
-          curCellSize = CELL_SIZE;
+            x = (mouseX-10);
+            y = (mouseY-10);
+            curCellSize = CELL_SIZE;
         } else {
-          x = origX;
-          y = origY;
-          curCellSize = INIT_CELL_SIZE;
+            x = origX;
+            y = origY;
+            curCellSize = INIT_CELL_SIZE;
         }
-      }
+    }
    
 //Shape clone(){
 //  return (Shape) super.clone();
@@ -127,7 +127,7 @@ class Shape implements Cloneable{
             }
             println();
           }
-        }
+      }
 }
  
  

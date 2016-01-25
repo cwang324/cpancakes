@@ -53,9 +53,8 @@ int rows = 10;
     
     
         int n = (int) (Math.random()*numShapes);
-        //a1 = shapes[n].deepClone();
-        //a1.setXY(90,275);
-        a1 = new ShapeK(90,275);
+        a1 = shapes[n].deepClone();
+        a1.setXY(90,275);
     
         n = (int) (Math.random()*numShapes);
         b1 = shapes[n].deepClone();
@@ -201,18 +200,6 @@ int rows = 10;
                 checkIfAShapeIsSelected();             
             }
         } 
-      //else if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
-      //    println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
-      //    g.dropShape(s1.sAry, g.validX(mouseX), g.validY(mouseY)); // want to make dropShape a boolean
-      //    s1.visible=false;
-      //    s1.setFollowMouse(false);
-      //    pieceInHand = false;
-      //} else if (pieceInHand){
-      //    println("switch off shape to follow the mouse" );          
-      //    s1.setFollowMouse(false);
-      //    //s1 = null;
-      //    pieceInHand = false;
-      //}
     }
   
   

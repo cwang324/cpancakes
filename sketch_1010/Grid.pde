@@ -126,7 +126,7 @@ class Grid {
                   }
               }
           }else{
-            return false;
+              return false;
           }
           
           //println("print shape array");
