@@ -1,4 +1,4 @@
-class Shapes implements Cloneable{
+class Shape implements Cloneable{
    
 static final int CELL_SIZE = 20;
 boolean followMouse=false;
@@ -6,8 +6,9 @@ float x,y, origX, origY;
 protected int[][] sAry = null;
 boolean visible;
 color c;
+int pointValue = 0;
  
-Shapes ( float xcor, float ycor ) {
+Shape ( float xcor, float ycor ) {
     x=xcor;
     y=ycor;
     origX=xcor;
@@ -16,7 +17,7 @@ Shapes ( float xcor, float ycor ) {
     c = color(0);
   }
   
-Shapes (){
+Shape (){
   this(0,0);
 }
  
@@ -33,6 +34,18 @@ void setFollowMouse ( boolean flag ) {
     this.followMouse = flag;
    }  
     
+   int pointValue(){
+     int ones = 0;
+     if (sAry!=null){
+     for (int row=0; row < sAry.length; row++){
+         for (int col=0; col < sAry[row].length; col++){
+             
+                 ones+=sAry[row][col];
+         }
+     }
+     }
+     return ones;
+   }
    
 // changes Shape coordinates based on mouse coordinates if followMouse=true and returns Shape to original position if 
 // Mouse=false
@@ -46,12 +59,12 @@ void dragShape() {
     }
   }
    
-//Shapes clone(){
-//  return (Shapes) super.clone();
+//Shape clone(){
+//  return (Shape) super.clone();
 //}
     
-    Shapes deepClone() {
-        Shapes s = new Shapes();
+    Shape deepClone() {
+        Shape s = new Shape();
         s.followMouse = this.followMouse;
         s.x = this.x;
         s.y = this.y;

@@ -1,4 +1,4 @@
-class shapeA extends Shapes {
+class shapeA extends Shape {
   
     // the shape that consists of a single square
     shapeA (float xcor, float ycor){   

@@ -1,4 +1,4 @@
-class ShapeH extends Shapes {
+class ShapeH extends Shape {
   
 // the shape that consists of a two squares stacked vertically  
 ShapeH(float xcor, float ycor) {

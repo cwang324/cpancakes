@@ -1,4 +1,4 @@
-class shapeC extends Shapes {
+class shapeC extends Shape {
      
     // the shape that consists of a four squares arranged in a square
     shapeC (float xcor, float ycor) {

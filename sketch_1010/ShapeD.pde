@@ -1,4 +1,4 @@
-class ShapeD extends Shapes {
+class ShapeD extends Shape {
 
 ShapeD (float xcor, float ycor) {
     super(xcor, ycor);

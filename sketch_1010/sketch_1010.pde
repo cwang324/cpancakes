@@ -4,15 +4,15 @@ PImage startScreen;
 PImage score;
 //SoundFile file;
 Grid g; //<>// //<>// //<>// //<>//
-Shapes  a1;
-Shapes  b1;
-Shapes  c1;
-Shapes s1 = null;
+Shape  a1;
+Shape  b1;
+Shape  c1;
+Shape s1 = null;
 Buttons start;
 Buttons restart;
-Shapes a = new shapeA();
+Shape a = new shapeA();
 
-Shapes [] shapes = { new shapeA(),
+Shape [] shapes = { new shapeA(),
                      new shapeB(),
                      new shapeC(),
                      new ShapeD(),
@@ -22,11 +22,18 @@ Shapes [] shapes = { new shapeA(),
                      new ShapeH(),
                      new ShapeI(),
                      new ShapeJ(),
+                     new ShapeK(),
+                     new ShapeL(),
+                     new ShapeM(),
+                     new ShapeN(),
+                     new ShapeO()
                    };
 
-ArrayList<Shapes> GO;
+ArrayList<Shape> GO;
 boolean pieceInHand = false;
 int regen = 3;
+int numShapes=shapes.length;
+
 
 int cols = 10;
 int rows = 10;
@@ -41,59 +48,24 @@ void setup() {
    
     // randomly generating shapes
   
-   
-    int n = (int) (Math.random()*6);
-    a1 = shapes[n].deepClone();
-    a1.setXY(90,275);
-    
-    //if (n==0){
-    //    a1 = new shapeA(90,275);
-    //}else if (n==1){
-    //    a1 = new shapeB(90,275);
-    //}else if(n==2){
-    //    a1 = new shapeC(90,275);
-    //}else if(n==3){
-    //    a1 = new ShapeD(90,275);
-    //}else if(n==4){
-    //    a1 = new ShapeE(90,275);
-    //}else{
-    //    a1 = new ShapeF(90,275);
-    //}
     start = new Buttons(132,200,100,50,color(153,255,51));
     restart = new Buttons(132,200,100,50,color(153,255,51));
     
-    n = (int) (Math.random()*6);
-    if (n==0){
-         b1 = new shapeA(160,275);
-    }else if (n==1){
-         b1 = new shapeB(160,275);
-    }else if (n==2){
-         b1 = new shapeC(160,275);
-    }else if (n==3){
-         b1 = new ShapeD(160,275);
-    }else if (n==4){
-         b1 = new ShapeE(160,275);
-    }else{
-         b1 = new ShapeF(160,275);
-    }
     
-    n = (int) (Math.random()*6);
-    if (n==0){
-         c1 = new shapeA(240,275);
-    }else if (n==1){
-         c1 = new shapeB(240,275);
-    }else if (n==2){
-         c1 = new shapeC(240,275);
-    }else if(n==3){
-         c1 = new ShapeD(240,275);
-    }else if(n==4){
-         c1 = new ShapeE(240,275);
-    }else{
-         c1 = new ShapeF(240,275);
-    }
-    //a1 = new shapeA(90,275);
-    //b1 = new shapeB(160,275);
-    //c1 = new shapeC(240,275);
+    int n = (int) (Math.random()*numShapes);
+    //a1 = shapes[n].deepClone();
+    //a1.setXY(90,275);
+    a1 = new ShapeN(90,275);
+    
+    n = (int) (Math.random()*numShapes);
+    b1 = shapes[n].deepClone();
+    b1.setXY(160,275);
+    
+    n = (int) (Math.random()*numShapes);
+    c1 = shapes[n].deepClone();
+    c1.setXY(240,275);
+    
+   
     //file = new SoundFile(this, "Whoosh.mp3");
 }
 
@@ -148,51 +120,20 @@ void draw() {
     //g.changeCellColor();
     
     if (regen==0){
-           int n = (int) (Math.random()*6);
-       if (n==0){
-            a1 = new shapeA(90,275);
-       }else if (n==1){
-            a1 = new shapeB(90,275);
-       }else if (n==2){
-            a1 = new shapeC(90,275);
-       }else if (n==3){
-            a1 = new ShapeD(90,275);
-       }else if (n==4){
-            a1 = new ShapeE(90,275);
-       }else if (n==5){
-            a1 = new ShapeF(90,275);
-       }
-        
-       n = (int) (Math.random()*6);
-    if (n==0){
-         b1 = new shapeA(160,275);
-    }else if (n==1){
-         b1 = new shapeB(160,275);
-    }else if (n==2){
-         b1 = new shapeC(160,275);
-    }else if (n==3){ //<>//
-         b1 = new ShapeD(160,275);
-    }else if (n==4){
-         b1 = new ShapeE(160,275);
-    }else{
-         b1 = new ShapeF(160,275);
-    }
+           
+        int n = (int) (Math.random()*numShapes);
+        a1 = shapes[n].deepClone();
+        a1.setXY(90,275);
+
+        n = (int) (Math.random()*numShapes);
+        b1 = shapes[n].deepClone();
+        b1.setXY(160,275);
     
-    n = (int) (Math.random()*6);
-    if (n==0){
-         c1 = new shapeA(240,275);
-    }else if (n==1){
-         c1 = new shapeB(240,275);
-    }else if (n==2){
-         c1 = new shapeC(240,275);
-    }else if(n==3){
-         c1 = new ShapeD(240,275);
-    }else if(n==4){
-         c1 = new ShapeE(240,275);
-    }else{
-         c1 = new ShapeF(240,275);
-    }
-            regen=3;
+        n = (int) (Math.random()*numShapes);
+        c1 = shapes[n].deepClone();
+        c1.setXY(240,275);
+       
+        regen=3;
     }
     //mousePressed();
     //println(mouseX + ", " + mouseY);
@@ -229,7 +170,7 @@ private void checkIfAShapeIsSelected () {
       println("set pieceInHand to " + pieceInHand );              
     }
     else if ( b1.visible && b1.contains(mouseX, mouseY) ){
-      b1.setFollowMouse(true);
+      b1.setFollowMouse(true); //<>//
       s1=b1;
       println("\n=========================\nsetting s1 to b1\n  s1 = " + s1 + ", b1 = " + b1 +  "\n=========================\n");
       pieceInHand = true;
@@ -241,7 +182,8 @@ private void checkIfAShapeIsSelected () {
       println("\n=========================\nsetting s1 to c1\n  s1 = " + s1 + ", c1 = " + c1 +  "\n=========================\n");
       pieceInHand = true;
       println("set pieceInHand to " + pieceInHand );             
-    }  
+    } 
+    
   }  
 
 
@@ -266,7 +208,8 @@ void mousePressed() {
           //}       
           //pieceInHand = true;
           //println("set pieceInHand to " + pieceInHand );
-          checkIfAShapeIsSelected();          
+          checkIfAShapeIsSelected();    
+          
       }
     } 
       //else if (pieceInHand && g.validLocation(g.validX(mouseX), g.validY(mouseY))) {
@@ -292,7 +235,7 @@ void mouseReleased() {
     s1.setFollowMouse(false);          
     if ( g.validLocation(g.validY(mouseY), g.validX(mouseX))) {
       println("\n================================\n=  about to update the array with the shape. s1 =" + s1 + "\n===========================\n");
-      if ( g.dropShape(s1.sAry, g.validY(mouseY), g.validX(mouseX), s1.c) ){ // want to make dropShape a boolean
+      if ( g.dropShape(s1.sAry, g.validY(mouseY), g.validX(mouseX), s1.c, s1.pointValue()) ){ // want to make dropShape a boolean
       s1.visible=false;
       //file.play();
       s1 = null;

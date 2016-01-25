@@ -125,7 +125,7 @@ int validY(int y){
   
   
 // changes gAry values (dropping the shape) if the shape is placed on an empty space in the grid
-boolean dropShape(int[][] ary, int x, int y, color c) {
+boolean dropShape(int[][] ary, int x, int y, color c, int pointVal) {
     
       //println ("\n=======================\nGrid.dropShape() method. input argument ary = " + ary  + "\n=======================\n");
       println ((x+ary[0].length-1));
@@ -162,12 +162,12 @@ boolean dropShape(int[][] ary, int x, int y, color c) {
               gAry[row+x][col+y]+=ary[row][col];
               if (gAry[row+x][col+y]>0 && grid[row+x][col+y].currentColor==color(209)){
                   grid[row+x][col+y].changeColor(c); 
-                  score+=10;
+                  
               }
           }
       }
-
-      println("After changing gAry");
+      score+=pointVal;
+      println("After changing gAry " + pointVal);
       printArray(gAry);  
       return true;
   }
@@ -212,7 +212,7 @@ boolean GameOver(int[][] ary){
   
 boolean NoSpace(int[][] ary, int x,int y){
     for (int row=0; row < ary.length; row++){
-      for  (int col=0; col<ary[0].length; col++){
+      for  (int col=0; col<ary[row].length; col++){
         if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
           return true;
         }

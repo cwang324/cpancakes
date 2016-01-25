@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-class shapeB extends Shapes {
+class shapeB extends Shape {
   
     // the shape that consists of a two squares stacked vertically  
     shapeB(float xcor, float ycor) {

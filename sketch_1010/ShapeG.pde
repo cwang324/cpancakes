@@ -1,4 +1,4 @@
-class ShapeG extends Shapes {
+class ShapeG extends Shape {
   
 // the shape that consists of a single square
 
