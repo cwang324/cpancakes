@@ -1,12 +1,15 @@
 class Shape implements Cloneable{
    
     static final int CELL_SIZE = 20;
+    static final int INIT_CELL_SIZE = 10;
+    
     boolean followMouse=false;
     float x,y, origX, origY;
     protected int[][] sAry = null;
     boolean visible;
     color c;
     int pointValue = 0;
+    int curCellSize = INIT_CELL_SIZE;
  
     Shape ( float xcor, float ycor ) {
         x=xcor;
@@ -53,9 +56,11 @@ class Shape implements Cloneable{
         if (followMouse) {
           x = (mouseX-10);
           y = (mouseY-10);
+          curCellSize = CELL_SIZE;
         } else {
           x = origX;
           y = origY;
+          curCellSize = INIT_CELL_SIZE;
         }
       }
    
@@ -97,16 +102,19 @@ class Shape implements Cloneable{
         fill(c);
         float startX = x;
         for ( int i = 0; i < sAry.length; i++ ) {
-          for ( int j = 0; j < sAry[i].length; j++ )  {   
-            if (sAry[i][j]==1){
-                rect(x,y,CELL_SIZE,CELL_SIZE,4);
-                x += CELL_SIZE;
+            for ( int j = 0; j < sAry[i].length; j++ )  {   
+                if (sAry[i][j]==1){
+                    rect(x,y,curCellSize,curCellSize,4);
+                    x += curCellSize;
+                }
+                if (sAry[i][j]==0){
+                    x += curCellSize;
+                }
             }
-          }
-          x = startX;
-          y += CELL_SIZE;
+        x = startX;
+        y += curCellSize;
         }
-      }  
+    }  
     
     
       public void printArray ( int[][] xArray ) {

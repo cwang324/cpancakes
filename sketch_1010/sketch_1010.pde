@@ -1,4 +1,4 @@
-//import processing.sound.*; //<>// //<>//
+//import processing.sound.*; //<>// //<>// //<>// //<>//
 int state;
 PImage startScreen;
 PImage score;
@@ -55,7 +55,7 @@ int rows = 10;
         int n = (int) (Math.random()*numShapes);
         //a1 = shapes[n].deepClone();
         //a1.setXY(90,275);
-        a1 = new ShapeN(90,275);
+        a1 = new ShapeK(90,275);
     
         n = (int) (Math.random()*numShapes);
         b1 = shapes[n].deepClone();
@@ -237,6 +237,12 @@ int rows = 10;
         }
     }
   
+    
+    //void highScore(int score){
+          
+      
+      
+    //}
             
     boolean endGame(){
         int num1=0;
