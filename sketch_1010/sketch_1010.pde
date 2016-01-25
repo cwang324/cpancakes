@@ -260,10 +260,10 @@ int rows = 10;
             }
         }
         if(num1==num2){
-            //println("true");
+            println("true");
             return true;
         }
-        //println("false");
+        println("false");
         return false;
   }  
   

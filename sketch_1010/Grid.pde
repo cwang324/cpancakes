@@ -182,8 +182,8 @@ class Grid {
   
   
     boolean GameOver(int[][] ary){
-        for(int i=0;i<9;i++){
-          for(int j=0;j<9;j++){
+        for(int i=0;i<10;i++){
+          for(int j=0;j<10;j++){
             if(!(NoSpace(ary,i,j))){
               return false;
             }
@@ -197,12 +197,13 @@ class Grid {
     boolean NoSpace(int[][] ary, int x,int y){
         for (int row=0; row < ary.length; row++){
           for  (int col=0; col<ary[row].length; col++){
-            if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
+            if((x+row)<10&&(y+col)<10){
+              if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
               return true;
-            }
+            }}
           }
         }
         return false;
-      }
+    }
     }
   
