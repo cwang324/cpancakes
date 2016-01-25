@@ -236,19 +236,19 @@ int rows = 10;
         int num2=0;
         if(a1.visible){
             num1++;
-            if(g.GameOver(a1.sAry)){
+            if(g.gameOver(a1.sAry)){
                 num2++;
             }
         }
         if(b1.visible){
             num1++;
-            if(g.GameOver(b1.sAry)){
+            if(g.gameOver(b1.sAry)){
                 num2++;
             }
         }
         if(c1.visible){
             num1++;
-            if(g.GameOver(c1.sAry)){
+            if(g.gameOver(c1.sAry)){
                 num2++;
             }
         }
