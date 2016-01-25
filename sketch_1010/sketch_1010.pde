@@ -10,11 +10,11 @@ Shape  c1;
 Shape s1 = null;
 Buttons start;
 Buttons restart;
-Shape a = new shapeA();
+Shape a = new ShapeA();
 
-Shape [] shapes = { new shapeA(),
-                     new shapeB(),
-                     new shapeC(),
+Shape [] shapes = { new ShapeA(),
+                     new ShapeB(),
+                     new ShapeC(),
                      new ShapeD(),
                      new ShapeE(),
                      new ShapeF(),
@@ -170,7 +170,7 @@ private void checkIfAShapeIsSelected () {
       println("set pieceInHand to " + pieceInHand );              
     }
     else if ( b1.visible && b1.contains(mouseX, mouseY) ){
-      b1.setFollowMouse(true); //<>//
+      b1.setFollowMouse(true); //<>// //<>//
       s1=b1;
       println("\n=========================\nsetting s1 to b1\n  s1 = " + s1 + ", b1 = " + b1 +  "\n=========================\n");
       pieceInHand = true;

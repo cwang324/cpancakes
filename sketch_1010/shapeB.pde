@@ -1,16 +1,16 @@
 import java.util.Arrays;
 
-class shapeB extends Shape {
+class ShapeB extends Shape {
   
     // the shape that consists of a two squares stacked vertically  
-    shapeB(float xcor, float ycor) {
+    ShapeB(float xcor, float ycor) {
         super(xcor, ycor);
         int[][] localAry = {{1}, {1}};
         this.sAry = localAry;  
         this.c = color(255,215,0);
     }
   
-    shapeB() {
+    ShapeB() {
       this(0.0f, 0.0f);
     }
 
@@ -19,7 +19,7 @@ class shapeB extends Shape {
   
   
 String toString() {
-    return "shapeB picked up = " + Arrays.toString(sAry);
+    return "ShapeB picked up = " + Arrays.toString(sAry);
   }  
   
 
