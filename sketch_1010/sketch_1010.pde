@@ -1,7 +1,9 @@
 //import processing.sound.*; //<>// //<>// //<>// //<>// //<>//
 int state;
+PImage instru;
 PImage startScreen;
 PImage score;
+PImage instructions;
 //SoundFile file;
 Grid g; //<>// //<>// //<>// //<>// //<>//
 Shape  a1;
@@ -11,6 +13,8 @@ Shape s1 = null;
 Buttons start;
 Buttons restart;
 Buttons pause;
+Buttons instruction;
+Buttons clear;
 Shape a = new ShapeA();
 
 Shape [] shapes = {  new ShapeA(),
@@ -44,6 +48,8 @@ int rows = 10;
         size(370,350);
         startScreen = loadImage("startscreen.png");
         score = loadImage("score.png");
+        instru = loadImage("instru.png");
+        instructions = loadImage("instructions.jpg");
         g = new Grid(10,10);
   
    
@@ -52,7 +58,8 @@ int rows = 10;
         start = new Buttons(132,200,100,50,color(153,255,51));
         restart = new Buttons(132,200,100,50,color(153,255,51));
         pause = new Buttons(120,20,35,20,color(153,204,204));
-    
+        instruction = new Buttons(132,260,100,50,color(204,153,153));
+        clear = new Buttons(300,20,35,20,color(204,153,255));
     
         int n = (int) (Math.random()*numShapes);
         a1 = shapes[n].deepClone();
@@ -79,7 +86,11 @@ int rows = 10;
             start.display();
             fill(255);
             triangle(170,210,170,240,200,225);
-            
+            instruction.display();
+            image(instru,165,270,30,30);
+            if(instruction.isOver()&& mousePressed){
+              image(instructions,75,75,200,290);
+            }
             if (start.isOver()&& mousePressed){
               
                 state=1;
@@ -88,9 +99,13 @@ int rows = 10;
         }
         
         if(state==3){
+            background(255);
+            fill(204,204,204);
+             text("Resume",132,200);
+             text("Paused Game",130,70);
             start.display();
             fill(255);
-            triangle(170,210,170,240,200,225);
+            triangle(170,210,170,240,200,225); 
             if (start.isOver()&& mousePressed){
             state=1;
         }
@@ -98,6 +113,10 @@ int rows = 10;
           
         
         if (state==2){
+              background(255);
+            fill(204,204,204);
+             text("Restart",132,200);
+             text("Game Over",130,70);
               restart.display();
               fill(255);
               triangle(170,210,170,240,200,225);
@@ -120,6 +139,14 @@ int rows = 10;
           rect(140,25,5,10);
           if(pause.isOver() && mousePressed){
             state=3;
+          }
+          
+          clear.display();
+          fill(255);
+          textSize(10);
+          text("clear",308,33);
+          if(clear.isOver() && mousePressed){
+            g.reset();
           }
           
           image(score,150,0,66,50);
