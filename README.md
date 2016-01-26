@@ -23,7 +23,7 @@ Carol:<br>
 
 <br>
 1/22/2016:<br>
-Katherine:<br>
+Katherine:edited cells in grid.<br>
 Carol:<br>
 - implemented score system
 - fixed bug where dropped shapes could color already colored spaces on grid <br>
@@ -31,7 +31,7 @@ Carol:<br>
 
 <br>
 1/23/2016:<br>
-Katherine:<br>
+Katherine:Added endscreen and startscreen.<br>
 Carol:<br>
 - replaced the hard-coded contains method for a generalized one that uses the shape array <br>
 - altered the dragShape method so that the cursor stays in the middle of the top left block <br>
@@ -39,14 +39,19 @@ Carol:<br>
 
 <br>
 1/24/2016:<br>
-Katherine:<br>
+Katherine:Discovered a bug in endGame, tried to fix it, failed.<br>
 Carol:<br>
 - made random shape generator a lot more efficent by creating an array of shapes that are cloned each time to generate new shapes to use <br>
 - changed point system to differ based on the Shape (to mimic the real game) <br>
 - reformatted code (easier readability)<br>
 
 1/25/2016:<br>
-Katherine:<br>
+Katherine:
+-added paused screen and a pause button and a resume button.<br>
+-tried to fix endGame bug.<br>
+-Added instructions in startscreen, need to hold mouse to read.<br>
+-added a clear screen button. <br>
+-<br>
 Carol:<br>
 - altered dragShape method to create shapes initially smaller but have them reach normal size when picked up <br>
 - fixed bug so that the game ends when there are no more possible moves <br>
