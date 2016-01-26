@@ -13,7 +13,7 @@ Buttons ( int xa,int ya,int wn,int hn, color c) {
     colour=c;
   }
     
-boolean isover() {
+boolean isOver() {
     if ( mouseX >= x  && mouseX <= x+w  && mouseY >=y  && mouseY <= y+h ) {
       return true;
     }

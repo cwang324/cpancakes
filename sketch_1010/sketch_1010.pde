@@ -10,6 +10,7 @@ Shape  c1;
 Shape s1 = null;
 Buttons start;
 Buttons restart;
+Buttons pause;
 Shape a = new ShapeA();
 
 Shape [] shapes = { new ShapeA(),
@@ -50,6 +51,7 @@ int rows = 10;
   
         start = new Buttons(132,200,100,50,color(153,255,51));
         restart = new Buttons(132,200,100,50,color(153,255,51));
+        pause = new Buttons(120,20,35,20,color(153,204,204));
     
     
         int n = (int) (Math.random()*numShapes);
@@ -78,18 +80,28 @@ int rows = 10;
             fill(255);
             triangle(170,210,170,240,200,225);
             
-            if (start.isover()&& mousePressed){
+            if (start.isOver()&& mousePressed){
               
                 state=1;
                 
             }
         }
         
+        if(state==3){
+            start.display();
+            fill(255);
+            triangle(170,210,170,240,200,225);
+            if (start.isOver()&& mousePressed){
+            state=1;
+        }
+        }
+          
+        
         if (state==2){
               restart.display();
               fill(255);
               triangle(170,210,170,240,200,225);
-        if (start.isover()&&mousePressed){
+        if (start.isOver()&&mousePressed){
               g.reset();
               state=1;
             }
@@ -99,9 +111,17 @@ int rows = 10;
       if(state ==1){
           background(255); 
           g.display();
-  //if(b1.isover()&&mousePressed){
+  //if(b1.isOver()&&mousePressed){
   //  grid[2][3].changecolor();
   //}
+          pause.display();
+          fill(255);
+          rect(130,25,5,10);
+          rect(140,25,5,10);
+          if(pause.isOver() && mousePressed){
+            state=3;
+          }
+          
           image(score,150,0,66,50);
           fill(102,204,255);
           textSize(20);
