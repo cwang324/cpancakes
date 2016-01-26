@@ -115,7 +115,7 @@ int rows = 10;
         if (state==2){
               background(255);
             fill(204,204,204);
-             text("Restart",132,200);
+             text("Restart",132,180);
              text("Game Over",130,70);
               restart.display();
               fill(255);
