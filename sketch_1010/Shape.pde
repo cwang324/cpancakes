@@ -77,9 +77,9 @@ class Shape implements Cloneable{
         s.c = this.c;
       
        int[][] newArray = new int[sAry.length][];
-       for ( int i = 0; i < sAry.length; i++ ) {
+       for (int i = 0; i < sAry.length; i++) {
            newArray[i] = new int[sAry[i].length];
-           for ( int j = 0; j < newArray[i].length; j++ ) {   
+           for (int j = 0; j < newArray[i].length; j++) {   
                newArray[i][j] = sAry[i][j];
            }            
        }
@@ -99,8 +99,8 @@ class Shape implements Cloneable{
         stroke(255);
         fill(c);
         float startX = x;
-        for ( int i = 0; i < sAry.length; i++ ) {
-            for ( int j = 0; j < sAry[i].length; j++ )  {   
+        for (int i = 0; i < sAry.length; i++) {
+            for (int j = 0; j < sAry[i].length; j++)  {   
                 if (sAry[i][j]==1){
                     rect(x,y,curCellSize,curCellSize,4);
                     x += curCellSize;
@@ -115,11 +115,11 @@ class Shape implements Cloneable{
     }  
     
     
-      public void printArray ( int[][] xArray ) {
-          for ( int i = 0; i < xArray.length; i++ ) {
-            for ( int j = 0; j < xArray[i].length; j++ ) {
-              print ( xArray[i][j] );
-              if ( j < xArray[i].length-1 ) {
+      public void printArray (int[][] xArray) {
+          for (int i = 0; i < xArray.length; i++) {
+            for (int j = 0; j < xArray[i].length; j++) {
+              print (xArray[i][j]);
+              if (j<xArray[i].length-1){
                 print(", ");
               }                     
             }

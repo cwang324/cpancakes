@@ -1,11 +1,11 @@
-//import processing.sound.*; //<>// //<>// //<>// //<>// //<>//
+ //<>//
 int state;
 PImage instru;
 PImage startScreen;
 PImage score;
-PImage instructions;
+PImage instructions; //<>//
 //SoundFile file;
-Grid g; //<>// //<>// //<>// //<>// //<>//
+Grid g; 
 Shape  a1;
 Shape  b1;
 Shape  c1;
@@ -74,7 +74,7 @@ int rows = 10;
         c1.setXY(240,275);
     
    
-        //file = new SoundFile(this, "Whoosh.mp3");
+  
     }
 
 
@@ -101,7 +101,7 @@ int rows = 10;
         if(state==3){
             background(255);
             fill(204,204,204);
-             text("Resume",132,200);
+             text("Resume",132,180);
              text("Paused Game",130,70);
             start.display();
             fill(255);
@@ -130,9 +130,7 @@ int rows = 10;
       if(state ==1){
           background(255); 
           g.display();
-  //if(b1.isOver()&&mousePressed){
-  //  grid[2][3].changecolor();
-  //}
+
           pause.display();
           fill(255);
           rect(130,25,5,10);
@@ -169,8 +167,8 @@ int rows = 10;
           a1.dragShape();
           b1.dragShape();
           c1.dragShape();
-    // no need
-    //g.changeCellColor();
+    
+    
     
           if (regen==0){
            
@@ -188,17 +186,7 @@ int rows = 10;
              
               regen=3;
           }
-    //mousePressed();
-    //println(mouseX + ", " + mouseY);
-    //println(g.validX(mouseX) + ", " + g.validY(mouseY));
-    //println("g.gAry (0,0) value " + g.gAry[0][0]);
-  
-    //println((int)(Math.random()*3));
-   //if ( s1 != null) {
-   //    println("s1.length= " + s1.sAry.length ); 
-   //    println("a1 =" + a1.sAry.length);  
-   //    println(s1);
-   // }
+ 
           g.clearg();
           if ( endGame() ){
               regen=0;
@@ -213,7 +201,7 @@ int rows = 10;
     int num=0;
 
 
-
+ //<>//
     private void checkIfAShapeIsSelected () {
         if ( a1.visible  && a1.contains(mouseX, mouseY)) {
           a1.setFollowMouse(true);
@@ -223,12 +211,12 @@ int rows = 10;
           println("set pieceInHand to " + pieceInHand );              
         }
         else if ( b1.visible && b1.contains(mouseX, mouseY) ){
-          b1.setFollowMouse(true); //<>// //<>//
+          b1.setFollowMouse(true); 
           s1=b1;
           println("\n=========================\nsetting s1 to b1\n  s1 = " + s1 + ", b1 = " + b1 +  "\n=========================\n");
           pieceInHand = true;
           println("set pieceInHand to " + pieceInHand );          
-        } //<>//
+        } 
         else if ( c1.visible && c1.contains (mouseX, mouseY) )  {
           c1.setFollowMouse(true);
           s1=c1;
@@ -272,11 +260,11 @@ int rows = 10;
     }
   
     
-    //void highScore(int score){
+
           
       
       
-    //}
+    
             
     boolean endGame(){
         int num1=0;

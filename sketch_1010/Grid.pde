@@ -132,39 +132,16 @@ class Grid {
     boolean dropShape(int[][] ary, int x, int y, color c, int pointVal) {
         
           //println ("\n=======================\nGrid.dropShape() method. input argument ary = " + ary  + "\n=======================\n");
-          println ((x+ary[0].length-1));
-          println((y+ary.length-1));
+        
           
           
-          /*
-          // checks if in grid
-          if (((x+ary.length-1)<10  && x>=0) && ((y+ary[0].length-1)<10 && y>=0)) {
+         
           
-              // checks if in empty space in grid
-              for (int row=0; row < ary.length; row++){
-                  for  (int col=0; col<ary[0].length; col++){
-                      if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
-                          return false;
-                      }
-                  }
-              }
-          }else{
-              return false;
-          }
-          */
-          
-          if ( !isValidDropLocation( x, y, ary )) {
+          if ( !isValidDropLocation(x, y, ary) ) {
               return false;
           }    
           
-          
-          //println("print shape array");
-          //printArray(ary);  
-          
-          
-          // before changing gAry
-          //println("Before changing gAry");
-          //printArray(gAry);  
+        
           
           // changing values in gAry
           for (int row=0; row < ary.length; row++) {        
@@ -187,10 +164,10 @@ class Grid {
   
     
     public void printArray(int[][] xArray)  {
-        for ( int i = 0; i < xArray.length; i++) {
-          for ( int j = 0; j < xArray[i].length; j++ ) {
-            print ( xArray[i][j] );
-            if ( j < xArray[i].length-1 ) {
+        for (int i = 0; i < xArray.length; i++) {
+          for (int j = 0; j < xArray[i].length; j++) {
+            print (xArray[i][j]);
+            if (j < xArray[i].length-1) {
               print(", ");
             }                     
           }
@@ -224,39 +201,6 @@ class Grid {
         return true;        
     }
   
-  
-  
-  
-  /*
-    boolean gameOver(int[][] ary){
-        for(int i=0;i<10;i++){
-          for(int j=0;j<10;j++){
-            if(!(NoSpace(ary,i,j))){
-              return false;
-            }
-          }
-        }
-        return true;
-        
-    }
-    
-  
-    boolean NoSpace(int[][] ary, int x,int y){
-       println ((x+ary.length));
-       println((y+ary[0].length));
-       if (((x+ary.length-1)<10  && x>=0) && ((y+ary[0].length-1)<10 && y>=0)) {
-          for (int row=0; row < ary.length; row++){
-             for  (int col=0; col<ary[row].length; col++){
-                 if (!(ary[row][col]==0 || gAry[x+row][y+col]==0)) {
-                    return true;
-                 }
-             }
-          
-         }
-      }
-      return false;
-    }
-    */
     
 }
   
