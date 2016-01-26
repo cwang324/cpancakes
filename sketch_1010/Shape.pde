@@ -26,7 +26,7 @@ class Shape implements Cloneable{
  
     boolean contains(int mX, int mY){
         for (int row = 0; row < sAry.length; row++){
-          if ( !(mX>x && mX<(x+(sAry[row].length*20)) && (mY>y && mY<(y+(sAry.length*20))))){
+          if ( !(mX>x && mX<(x+(sAry[row].length*curCellSize)) && (mY>y && mY<(y+(sAry.length*curCellSize))))){
               return false;
           }
         }
@@ -64,9 +64,7 @@ class Shape implements Cloneable{
         }
     }
    
-//Shape clone(){
-//  return (Shape) super.clone();
-//}
+
     
     Shape deepClone() {
         Shape s = new Shape();

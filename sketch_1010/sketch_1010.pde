@@ -1,9 +1,9 @@
-//import processing.sound.*; //<>// //<>// //<>// //<>//
+//import processing.sound.*; //<>// //<>// //<>// //<>// //<>//
 int state;
 PImage startScreen;
 PImage score;
 //SoundFile file;
-Grid g; //<>// //<>// //<>// //<>//
+Grid g; //<>// //<>// //<>// //<>// //<>//
 Shape  a1;
 Shape  b1;
 Shape  c1;
@@ -11,10 +11,9 @@ Shape s1 = null;
 Buttons start;
 Buttons restart;
 Buttons pause;
-Buttons instruction;
 Shape a = new ShapeA();
 
-Shape [] shapes = { new ShapeA(),
+Shape [] shapes = {  new ShapeA(),
                      new ShapeB(),
                      new ShapeC(),
                      new ShapeD(),
@@ -53,7 +52,7 @@ int rows = 10;
         start = new Buttons(132,200,100,50,color(153,255,51));
         restart = new Buttons(132,200,100,50,color(153,255,51));
         pause = new Buttons(120,20,35,20,color(153,204,204));
-        instruction = new Buttons(132,260,100,50,color(204,153,153));
+    
     
         int n = (int) (Math.random()*numShapes);
         a1 = shapes[n].deepClone();
@@ -80,8 +79,7 @@ int rows = 10;
             start.display();
             fill(255);
             triangle(170,210,170,240,200,225);
-            instruction.display();
-            fill(255);
+            
             if (start.isOver()&& mousePressed){
               
                 state=1;
@@ -90,13 +88,9 @@ int rows = 10;
         }
         
         if(state==3){
-            background(255);
-            fill(204,204,204);
-            text("Resume",132,200);
-            text("Paused Game",130,70);
             start.display();
             fill(255);
-            triangle(170,210,170,240,200,225); 
+            triangle(170,210,170,240,200,225);
             if (start.isOver()&& mousePressed){
             state=1;
         }
@@ -207,7 +201,7 @@ int rows = 10;
           println("\n=========================\nsetting s1 to b1\n  s1 = " + s1 + ", b1 = " + b1 +  "\n=========================\n");
           pieceInHand = true;
           println("set pieceInHand to " + pieceInHand );          
-        }
+        } //<>//
         else if ( c1.visible && c1.contains (mouseX, mouseY) )  {
           c1.setFollowMouse(true);
           s1=c1;
